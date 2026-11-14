@@ -1232,3 +1232,3805 @@ body {
   font-size: 0.88rem;
   color: #92400e;
 }
+
+/* Privacy Masking Highlight */
+.redacted-tag {
+  background: #e2e8f0;
+  color: #475569;
+  font-weight: 800;
+  padding: 1px 6px;
+  border-radius: 4px;
+  border: 1px dashed #94a3b8;
+  font-size: 0.85em;
+}
+
+/* GUIDED DEMO STORY MODAL & STEPS */
+.demo-story-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(6px);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.demo-story-modal.active {
+  display: flex;
+}
+
+.demo-story-card {
+  background: #ffffff;
+  max-width: 720px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.demo-steps-track {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.demo-steps-track::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 10%;
+  right: 10%;
+  height: 3px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.demo-step-bubble {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.step-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f1f5f9;
+  border: 2px solid #cbd5e1;
+  color: #64748b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.demo-step-bubble.active .step-circle {
+  background: #7c3aed;
+  border-color: #6d28d9;
+  color: #ffffff;
+  transform: scale(1.1);
+  box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.2);
+}
+
+.demo-step-bubble.completed .step-circle {
+  background: #10b981;
+  border-color: #059669;
+  color: #ffffff;
+}
+
+.step-title-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #64748b;
+  max-width: 75px;
+  text-align: center;
+}
+
+.demo-step-bubble.active .step-title-label {
+  color: #7c3aed;
+  font-weight: 800;
+}
+
+.demo-scene-box {
+  background: #f8fafc;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* IVR / MISSED CALL FALLBACK SIMULATOR */
+.ivr-container {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .ivr-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.phone-mockup-frame {
+  background: #1e293b;
+  border-radius: 36px;
+  padding: 16px;
+  box-shadow: 0 20px 25px -5px rgba(0,0,0,0.3);
+  max-width: 320px;
+  margin: 0 auto;
+  border: 4px solid #334155;
+  color: white;
+}
+
+.phone-screen {
+  background: #0f172a;
+  border-radius: 24px;
+  padding: 24px 16px;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.incoming-call-animation {
+  animation: pulse-ring 1.5s infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  50% { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.8; }
+}
+
+.call-control-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.15s;
+}
+
+.call-control-btn.accept {
+  background: #10b981;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+}
+
+.call-control-btn.reject {
+  background: #ef4444;
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.4);
+}
+
+/* VILLAGE SCAM MAP STYLES */
+.scam-map-warning-box {
+  background: #fff7ed;
+  border: 1.5px solid #fed7aa;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-bottom: 20px;
+  font-size: 0.88rem;
+  color: #9a3412;
+}
+
+.district-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.district-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s;
+  position: relative;
+}
+
+.district-card:hover {
+  transform: translateY(-2px);
+  border-color: #f97316;
+  box-shadow: var(--shadow-md);
+}
+
+.district-card.high-alert {
+  border-color: #f87171;
+  background: #fffdfd;
+}
+
+.district-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.district-name {
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.threat-count-pill {
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 999px;
+}
+
+.threat-count-pill.critical {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.threat-count-pill.moderate {
+  background: #fef3c7;
+  color: #d97706;
+}
+
+.threshold-gauge {
+  background: #e2e8f0;
+  height: 6px;
+  border-radius: 3px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.threshold-bar {
+  background: #ea580c;
+  height: 100%;
+}
+
+/* HONEST ASSESSMENT & PITCH SECTION */
+.assessment-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 860px) {
+  .assessment-two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+.strength-card {
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.strength-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 0.88rem;
+  color: #14532d;
+}
+
+.risk-card {
+  background: #fff5f5;
+  border: 1.5px solid #fecaca;
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.risk-item {
+  background: #ffffff;
+  border: 1px solid #fee2e2;
+  border-radius: 8px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  border-left: 4px solid #ef4444;
+}
+
+.risk-title {
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: #991b1b;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.risk-mitigation {
+  font-size: 0.82rem;
+  color: #475569;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+/* Pitch Slide Deck Viewer */
+.pitch-deck-container {
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+}
+
+.slide-tabs-row {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1.5px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+  overflow-x: auto;
+}
+
+.slide-tab-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.slide-tab-btn.active {
+  background: #1e3a8a;
+  color: #ffffff;
+  border-color: #1e3a8a;
+}
+
+
+/* =========================================================
+   DARK THEME & ADVANCED VISUAL ENHANCEMENTS
+   ========================================================= */
+
+/* Dark Theme Variables */
+body.dark-theme {
+  --primary: #3b82f6;
+  --primary-light: #60a5fa;
+  --primary-dark: #0f172a;
+  --bg-slate: #080d1a;
+  --card-bg: #0f172a;
+  --text-main: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #1e293b;
+
+  --scam-red: #f87171;
+  --scam-bg: rgba(239, 68, 68, 0.14);
+  --scam-border: #ef4444;
+
+  --risky-amber: #fbbf24;
+  --risky-bg: rgba(245, 158, 11, 0.14);
+  --risky-border: #f59e0b;
+
+  --verify-green: #34d399;
+  --verify-bg: rgba(16, 185, 129, 0.14);
+  --verify-border: #10b981;
+
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 4px 10px -1px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 15px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+/* Dark theme specific component adaptations */
+body.dark-theme .emergency-strip {
+  background: linear-gradient(90deg, #7f1d1d, #991b1b);
+}
+
+body.dark-theme .app-header {
+  background: #0f172a;
+  border-color: #1e293b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .brand-titles h1 {
+  color: #f8fafc;
+}
+
+body.dark-theme .core-question-pill {
+  background: rgba(30, 58, 138, 0.3);
+  border-color: #2563eb;
+  color: #93c5fd;
+}
+
+body.dark-theme .lang-select-box {
+  background: #1e293b;
+  border-color: #334155;
+  color: #cbd5e1;
+}
+
+body.dark-theme .lang-select-box select {
+  color: #f8fafc;
+}
+
+body.dark-theme .nav-tab-btn {
+  background: #0f172a;
+  border-color: #1e293b;
+  color: #94a3b8;
+}
+
+body.dark-theme .nav-tab-btn:hover {
+  background: #1e293b;
+  border-color: #3b82f6;
+}
+
+body.dark-theme .nav-tab-btn.active {
+  background: rgba(37, 99, 235, 0.2);
+  border-color: #3b82f6;
+  color: #60a5fa;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.25);
+}
+
+body.dark-theme .card-shell {
+  background: #0f172a;
+  border-color: #1e293b;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+body.dark-theme .card-title-row h2 {
+  color: #f8fafc;
+}
+
+body.dark-theme .sub-tab-btn {
+  color: #94a3b8;
+}
+
+body.dark-theme .sub-tab-btn.active {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+body.dark-theme .preset-selector {
+  background: #1e293b;
+}
+
+body.dark-theme .preset-selector label {
+  color: #cbd5e1;
+}
+
+body.dark-theme .chip-btn {
+  background: #0f172a;
+  border-color: #334155;
+  color: #f1f5f9;
+}
+
+body.dark-theme .chip-btn:hover {
+  background: #1e293b;
+  border-color: #60a5fa;
+  color: #93c5fd;
+}
+
+body.dark-theme .custom-textarea {
+  background: #090e1a;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+body.dark-theme .custom-textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+}
+
+body.dark-theme .voice-input-box {
+  background: #0b1120;
+  border-color: #334155;
+}
+
+body.dark-theme .voice-explanation-player {
+  background: #0a0f1d;
+  border-color: #1e293b;
+}
+
+body.dark-theme .spoken-transcript {
+  background: #0f172a;
+  color: #f1f5f9;
+  border-left-color: #3b82f6;
+}
+
+body.dark-theme .flag-item {
+  background: #0f172a;
+  border-color: #1e293b;
+  color: #f1f5f9;
+}
+
+body.dark-theme .clear-action-block {
+  background: #0b1120 !important;
+}
+
+body.dark-theme .action-text {
+  color: #f8fafc;
+}
+
+body.dark-theme .utility-actions-bar {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+body.dark-theme .offline-toggle-container {
+  background: #1e293b;
+  border-color: #334155;
+  color: #f8fafc;
+}
+
+body.dark-theme .privacy-badge {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #059669;
+  color: #6ee7b7;
+}
+
+body.dark-theme .modal-card,
+body.dark-theme .demo-story-card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #f8fafc;
+}
+
+body.dark-theme .modal-close-btn {
+  background: #1e293b;
+  color: #cbd5e1;
+}
+
+body.dark-theme .demo-scene-box {
+  background: #090e1a;
+  border-color: #1e293b;
+}
+
+body.dark-theme .contact-card {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+body.dark-theme .contact-card:hover {
+  border-color: #3b82f6;
+  background: #131c31;
+}
+
+body.dark-theme .contact-card.selected {
+  background: rgba(59, 130, 246, 0.18);
+  border-color: #3b82f6;
+}
+
+body.dark-theme .contact-info h4 {
+  color: #f8fafc;
+}
+
+body.dark-theme .question-box {
+  background: #090e1a;
+  color: #f8fafc;
+}
+
+body.dark-theme .question-phrase {
+  color: #4ade80;
+}
+
+body.dark-theme .district-card {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+body.dark-theme .district-name {
+  color: #f8fafc;
+}
+
+body.dark-theme .pitch-deck-container {
+  background: #0f172a;
+  border-color: #1e293b;
+}
+
+body.dark-theme .slide-tab-btn {
+  background: #1e293b;
+  border-color: #334155;
+  color: #94a3b8;
+}
+
+body.dark-theme .slide-tab-btn.active {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+body.dark-theme .copy-snippet-box {
+  background: #090e1a;
+  border-color: #334155;
+  color: #e2e8f0;
+}
+
+/* Dark mode for WhatsApp simulation */
+body.dark-theme .whatsapp-simulation-screen {
+  background: #0b141a;
+  border-color: #202c33;
+}
+
+body.dark-theme .wa-chat-bubble.sender-me {
+  background: #005c4b;
+  color: #e9edef;
+}
+
+body.dark-theme .wa-chat-bubble.sender-other {
+  background: #202c33;
+  color: #e9edef;
+}
+
+body.dark-theme .wa-timestamp {
+  color: #8696a0;
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #1e293b;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+
+body.dark-theme .theme-toggle-btn {
+  background: #1e293b;
+  border-color: #3b82f6;
+  color: #f8fafc;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+}
+
+/* =========================================================
+   PICTURES & GRAPHICAL ASSETS (SIMULATED NOTIFICATIONS, STAMPS)
+   ========================================================= */
+
+/* Hero Banner with Futuristic Cyber-Shield Illustration */
+.hero-visual-card {
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0c4a6e 100%);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  margin-bottom: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-visual-card::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.25), transparent 70%);
+  pointer-events: none;
+}
+
+.hero-text-side {
+  max-width: 580px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-badge-tag {
+  background: rgba(249, 115, 22, 0.2);
+  border: 1px solid #f97316;
+  color: #fdba74;
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.hero-visual-card h2 {
+  font-size: 1.55rem;
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 8px;
+  background: linear-gradient(90deg, #ffffff, #93c5fd, #fdba74);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-visual-card p {
+  font-size: 0.92rem;
+  color: #cbd5e1;
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+
+.hero-pills-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.hero-pill-item {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(4px);
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-illustration-side {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Real-looking Android Lockscreen Notification Mockup */
+.phone-notification-mockup {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #ef4444;
+  border: 1px solid #e2e8f0;
+  border-left-width: 5px;
+  position: relative;
+  transition: all 0.2s;
+}
+
+body.dark-theme .phone-notification-mockup {
+  background: #111b27;
+  border-color: #1e293b;
+  border-left-color: #ef4444;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35);
+}
+
+.phone-notif-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.notif-app-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+body.dark-theme .notif-app-badge {
+  color: #f8fafc;
+}
+
+.notif-sender-pill {
+  background: #fee2e2;
+  color: #b91c1c;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+body.dark-theme .notif-sender-pill {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+}
+
+.notif-time {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.notif-preview-body {
+  font-size: 0.88rem;
+  color: #334155;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+body.dark-theme .notif-preview-body {
+  color: #cbd5e1;
+}
+
+/* AUTHENTIC INDIAN STAMP PAPER ARTWORK */
+.stamp-paper-frame {
+  background: #fdfaf0;
+  border: 2px solid #dcd1b3;
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+body.dark-theme .stamp-paper-frame {
+  background: #1a1e28;
+  border-color: #334155;
+}
+
+.official-stamp-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #b45309;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+}
+
+.stamp-emblem-svg {
+  width: 44px;
+  height: 44px;
+}
+
+.stamp-center-title {
+  text-align: center;
+  line-height: 1.2;
+}
+
+.stamp-title-hi {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #b45309;
+  letter-spacing: 1px;
+}
+
+.stamp-title-en {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #78350f;
+  letter-spacing: 1.5px;
+}
+
+.stamp-value-box {
+  background: #b45309;
+  color: #ffffff;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+.stamp-serial-code {
+  font-family: monospace;
+  font-size: 0.72rem;
+  color: #854d0e;
+  text-align: right;
+  margin-bottom: 8px;
+}
+
+/* Animated Laser Scanner Effect across the Paper */
+.laser-scan-beam {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ef4444, #38bdf8, transparent);
+  box-shadow: 0 0 15px 3px rgba(56, 189, 248, 0.8), 0 0 25px 6px rgba(239, 68, 68, 0.6);
+  pointer-events: none;
+  z-index: 10;
+  animation: laser-sweep 3s ease-in-out infinite alternate;
+}
+
+@keyframes laser-sweep {
+  0% { top: 5%; opacity: 0.9; }
+  50% { top: 90%; opacity: 1; }
+  100% { top: 5%; opacity: 0.9; }
+}
+
+/* Red Rubber Stamp "PREDATORY / UNLAWFUL" */
+.rubber-stamp-distressed {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-20deg);
+  border: 4px dashed #dc2626;
+  padding: 10px 24px;
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #dc2626;
+  opacity: 0.88;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 5;
+  background: rgba(254, 242, 242, 0.7);
+  box-shadow: 0 0 10px rgba(220, 38, 38, 0.2);
+}
+
+body.dark-theme .rubber-stamp-distressed {
+  background: rgba(20, 10, 10, 0.85);
+  border-color: #ef4444;
+  color: #ef4444;
+}
+
+/* AVATAR PORTRAIT CARDS */
+.character-avatar-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #3b82f6;
+  background: #e2e8f0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* RADAR VISUAL FOR VILLAGE SCAM MAP */
+.radar-map-widget {
+  background: radial-gradient(circle at center, #0c1a30 0%, #060b14 80%);
+  border-radius: var(--radius-md);
+  border: 1.5px solid #1e3a8a;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  min-height: 200px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.radar-sweep-effect {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg at 50% 50%, rgba(56, 189, 248, 0.2) 0deg, transparent 60deg, transparent 360deg);
+  animation: radar-rotate 4s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes radar-rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.radar-target-dot {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #ef4444;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ef4444;
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+/* Feature subcards & IVR inputs for both Light & Dark Theme */
+.broadcast-sim-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  transition: all 0.25s ease;
+}
+
+body.dark-theme .broadcast-sim-card {
+  background: #090e1a;
+  border-color: #1e293b;
+}
+
+.feature-subcard {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 14px;
+  transition: all 0.25s ease;
+}
+
+body.dark-theme .feature-subcard {
+  background: #090e1a;
+  border-color: #1e293b;
+}
+
+.ivr-box-container {
+  background: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  padding: 14px;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  transition: all 0.25s ease;
+}
+
+body.dark-theme .ivr-box-container {
+  background: #090e1a;
+  border-color: #1e293b;
+}
+
+.ivr-input-field {
+  padding: 8px 12px;
+  background: #ffffff;
+  color: #0f172a;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 6px;
+  font-weight: 700;
+  flex: 1;
+  transition: all 0.25s ease;
+}
+
+body.dark-theme .ivr-input-field {
+  background: #0f172a;
+  color: #f8fafc;
+  border-color: #334155;
+}
+
+/* Smooth transition for theme switching */
+body, .app-header, .card-shell, .nav-tab-btn, .chip-btn, .custom-textarea, .voice-explanation-player, .contact-card, .utility-actions-bar, .theme-toggle-btn {
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+/* =========================================================
+   NEW ADDITIONS: FRICTION TIMER, CARD FLIP, UPI EXPLAINER,
+   TESSERACT OCR PROGRESS, REGIONAL VOICE TESTER, BENCHMARK
+   ========================================================= */
+
+/* 10-Minute Friction Timer */
+.friction-timer-card {
+  background: linear-gradient(135deg, #1e1b4b, #312e81);
+  border: 1.5px solid #6366f1;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-top: 16px;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.timer-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.timer-pulse-circle {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.25);
+  border: 2px solid #818cf8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-family: monospace;
+  animation: pulse-indigo 2s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-indigo {
+  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.6); }
+  70% { box-shadow: 0 0 0 14px rgba(99, 102, 241, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}
+
+.timer-info h4 {
+  font-size: 0.98rem;
+  font-weight: 800;
+  color: #e0e7ff;
+  margin-bottom: 3px;
+}
+
+.timer-info p {
+  font-size: 0.82rem;
+  color: #c7d2fe;
+  line-height: 1.4;
+  max-width: 520px;
+}
+
+.timer-btn {
+  background: #4f46e5;
+  color: #ffffff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timer-btn:hover {
+  background: #6366f1;
+}
+
+/* Call-Back Script & Interactive ATM Card Flip */
+.callback-script-box {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: var(--radius-md);
+  padding: 18px;
+  margin-top: 16px;
+}
+
+body.dark-theme .callback-script-box {
+  background: #061c12;
+  border-color: #059669;
+}
+
+.card-flip-flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.atm-card-visual {
+  width: 270px;
+  height: 155px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a, #0369a1);
+  color: #ffffff;
+  padding: 14px;
+  position: relative;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  flex-shrink: 0;
+}
+
+.atm-mag-stripe {
+  background: #020617;
+  height: 28px;
+  margin: -14px -14px 6px -14px;
+}
+
+.atm-tollfree-highlight {
+  background: #fef08a;
+  color: #854d0e;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: inline-block;
+  border: 1px solid #facc15;
+}
+
+/* UPI Collect Request Explainer */
+.upi-explainer-box {
+  background: #fff7ed;
+  border: 1.5px solid #fed7aa;
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-top: 16px;
+}
+
+body.dark-theme .upi-explainer-box {
+  background: #1c1106;
+  border-color: #b45309;
+}
+
+.upi-rule-pill {
+  background: #ea580c;
+  color: #ffffff;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+/* Regional Voice Capability Tester */
+.voice-tester-box {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-top: 16px;
+}
+
+body.dark-theme .voice-tester-box {
+  background: #090e1a;
+  border-color: #1e293b;
+}
+
+.voice-chips-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.voice-badge-pill {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: 1px solid;
+}
+
+.voice-badge-pill.installed {
+  background: #f0fdf4;
+  border-color: #86efac;
+  color: #166534;
+}
+
+body.dark-theme .voice-badge-pill.installed {
+  background: rgba(16, 185, 129, 0.15);
+  border-color: #059669;
+  color: #6ee7b7;
+}
+
+.voice-badge-pill.fallback {
+  background: #fffbeb;
+  border-color: #fde68a;
+  color: #92400e;
+}
+
+body.dark-theme .voice-badge-pill.fallback {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: #d97706;
+  color: #fcd34d;
+}
+
+/* Tesseract OCR Progress Bar */
+.ocr-progress-container {
+  background: #eff6ff;
+  border: 1.5px solid #93c5fd;
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  margin-top: 12px;
+}
+
+body.dark-theme .ocr-progress-container {
+  background: #0b172a;
+  border-color: #2563eb;
+}
+
+.ocr-progress-track {
+  width: 100%;
+  height: 8px;
+  background: #cbd5e1;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+body.dark-theme .ocr-progress-track {
+  background: #1e293b;
+}
+
+.ocr-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #2563eb, #38bdf8);
+  width: 0%;
+  transition: width 0.2s ease;
+}
+
+/* Benchmark Live Modal & Drawer */
+.benchmark-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(6px);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.benchmark-modal.active {
+  display: flex;
+}
+
+.benchmark-card {
+  background: #ffffff;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .benchmark-card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  color: #f8fafc;
+}
+
+.benchmark-metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.metric-card {
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 14px;
+  text-align: center;
+}
+
+body.dark-theme .metric-card {
+  background: #090e1a;
+  border-color: #1e293b;
+}
+
+.metric-number {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #2563eb;
+  margin-top: 4px;
+}
+
+body.dark-theme .metric-number {
+  color: #38bdf8;
+}
+
+.benchmark-table-wrapper {
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  margin-top: 14px;
+}
+
+.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  text-align: left;
+}
+
+.benchmark-table th, .benchmark-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.benchmark-table th {
+  background: #f1f5f9;
+  font-weight: 700;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+body.dark-theme .benchmark-table th {
+  background: #1e293b;
+  color: #f8fafc;
+}
+
+body.dark-theme .benchmark-table td {
+  border-color: #1e293b;
+}
+
+/* DTMF Keypad for IVR Phone Mockup */
+.ivr-dtmf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+  max-width: 240px;
+  margin: 0 auto;
+}
+
+.ivr-dtmf-key {
+  background: #1e293b;
+  border: 1.5px solid #334155;
+  color: #f8fafc;
+  padding: 6px 4px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.ivr-dtmf-key strong {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.ivr-dtmf-key small {
+  font-size: 0.62rem;
+  color: #94a3b8;
+  margin-top: 2px;
+}
+
+.ivr-dtmf-key:hover {
+  background: #2563eb;
+  border-color: #60a5fa;
+  transform: scale(1.05);
+}
+
+.ivr-dtmf-key:active {
+  background: #1d4ed8;
+  transform: scale(0.95);
+}
+
+/* Active Message Badge on IVR and Cybercrime Tabs */
+.ivr-active-msg-card {
+  transition: all 0.25s ease;
+}
+
+.ivr-active-msg-card:hover {
+  border-color: #60a5fa;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+}
+
+/* Paper Document Preview Thumbnail */
+#paper-image-preview-box img {
+  max-height: 220px;
+  border-radius: 8px;
+  border: 1.5px solid #cbd5e1;
+  box-shadow: var(--shadow-sm);
+}
+
+body.dark-theme #paper-image-preview-box img {
+  border-color: #334155;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ==============================================================
+   INTERACTIVE ACCESSIBILITY, PWA & SAFETY MODULES
+   ============================================================== */
+
+/* 1. Android Share-Sheet Simulation Drawer */
+.android-share-sheet-drawer {
+  background: #1e293b;
+  border-radius: 20px 20px 0 0;
+  max-width: 480px;
+  width: 100%;
+  padding: 20px 24px 28px;
+  margin: auto auto 0;
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+  animation: slideUpShare 0.3s ease-out;
+}
+
+@keyframes slideUpShare {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.share-sheet-handle {
+  width: 40px;
+  height: 4px;
+  background: #475569;
+  border-radius: 99px;
+  margin: 0 auto 16px;
+}
+
+.share-app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-top: 16px;
+  text-align: center;
+}
+
+.share-app-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  padding: 10px 4px;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.share-app-item:hover {
+  background: rgba(255, 255, 255, 0.08);
+  transform: translateY(-2px);
+}
+
+.share-app-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+}
+
+.share-app-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #f1f5f9;
+}
+
+/* 2. Interactive 3D Flip ATM Debit Card */
+.flip-card-container {
+  perspective: 1000px;
+  width: 100%;
+  max-width: 380px;
+  height: 220px;
+  margin: 12px auto;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.flip-card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.atm-card-face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 14px;
+  padding: 16px 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.atm-card-face.front {
+  background: linear-gradient(135deg, #1e3a8a 0%, #1e293b 60%, #0f172a 100%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.atm-card-face.back {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border: 1.5px solid #22c55e;
+  color: #ffffff;
+  transform: rotateY(180deg);
+  padding: 12px 16px;
+}
+
+.atm-chip {
+  width: 42px;
+  height: 32px;
+  background: linear-gradient(135deg, #fcd34d, #b45309);
+  border-radius: 6px;
+  border: 1px solid #78350f;
+}
+
+.atm-back-stripe {
+  background: #000000;
+  height: 34px;
+  margin: -12px -16px 8px;
+}
+
+.atm-back-signature {
+  background: #ffffff;
+  height: 26px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 8px;
+  color: #0f172a;
+  font-family: monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.atm-tollfree-box {
+  background: rgba(34, 197, 94, 0.15);
+  border: 1.5px dashed #22c55e;
+  border-radius: 8px;
+  padding: 8px 10px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* 3. Interactive Standalone Friction Timer */
+.breathing-pulse-ring {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.25) 0%, rgba(14, 165, 233, 0.05) 70%, transparent 100%);
+  border: 3px solid #38bdf8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 0 25px rgba(56, 189, 248, 0.35);
+  animation: breathingAnimation 8s ease-in-out infinite;
+}
+
+@keyframes breathingAnimation {
+  0% { transform: scale(0.95); border-color: #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+  50% { transform: scale(1.08); border-color: #34d399; box-shadow: 0 0 35px rgba(52, 211, 153, 0.45); }
+  100% { transform: scale(0.95); border-color: #38bdf8; box-shadow: 0 0 15px rgba(56, 189, 248, 0.2); }
+}
+
+.timer-countdown-big {
+  font-size: 2.2rem;
+  font-weight: 900;
+  font-family: monospace;
+  color: #ffffff;
+  line-height: 1;
+}
+
+/* 4. UPI Collect Request Interactive Simulator */
+.upi-mock-screen {
+  background: #0f172a;
+  border: 1.5px solid #334155;
+  border-radius: 16px;
+  max-width: 420px;
+  margin: 12px auto;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.upi-collect-badge {
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 999px;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.upi-golden-rule-banner {
+  background: linear-gradient(135deg, #7f1d1d, #991b1b);
+  border: 2px solid #ef4444;
+  border-radius: 12px;
+  padding: 14px 18px;
+  color: #ffffff;
+  margin-top: 14px;
+}
+
+/* 5. Regional Voice Lab Testing Grid */
+.voice-test-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.voice-test-card {
+  background: #1e293b;
+  border: 1.5px solid #334155;
+  border-radius: 10px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.voice-test-card.installed {
+  border-color: #22c55e;
+}
+
+.voice-test-card.fallback {
+  border-color: #f59e0b;
+}
+
+
+</style>
+  <!-- Tesseract.js for Real Client-Side OCR (Hindi + English) -->
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+</head>
+<body class="dark-theme">
+
+  <!-- Top Emergency Helpline Banner -->
+  <div class="emergency-strip">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <span>🚨</span>
+      <span>National Cyber Helpline (24x7 वित्तीय धोखाधड़ी हेल्पलाइन):</span>
+      <a href="tel:1930" class="call-badge">📞 Dial 1930</a>
+    </div>
+    <div class="emergency-subtext">
+      First 24 hours (गोल्डन ऑवर) में शिकायत करने पर पैसा फ़्रीज़ हो सकता है
+    </div>
+  </div>
+
+  <div class="app-wrapper">
+
+    <!-- Top Utility & Prototype Bar -->
+    <div class="utility-actions-bar">
+      <!-- Demo Story Pill -->
+      <button id="btn-start-demo-story" class="demo-story-pill">
+        <span>🎬</span>
+        <span>Run Demo Story (Elderly KYC SMS Walkthrough)</span>
+      </button>
+
+      <!-- Benchmark & Evidence Modal Pill -->
+      <button id="btn-open-benchmark-modal" class="demo-story-pill" style="background: linear-gradient(135deg, #0284c7, #0369a1);">
+        <span>📊</span>
+        <span>Run 85-Message Benchmark (Evidence)</span>
+      </button>
+
+      <!-- A1–A6 Multi-Agent Architecture Modal Pill -->
+      <button id="btn-open-agents-modal" class="demo-story-pill" style="background: linear-gradient(135deg, #0d9488, #0f766e);" title="Inspect A1–A6 Multi-Agent Architecture">
+        <span>🤖</span>
+        <span>A1–A6 Agent Architecture</span>
+      </button>
+
+      <!-- Cloud AI Tier 2 LLM Settings Pill -->
+      <button id="btn-open-cloud-ai-settings" class="demo-story-pill" style="background: linear-gradient(135deg, #059669, #047857);" title="Configure Google Gemini API Key for Live Cloud LLM Paper Analysis">
+        <span>☁️</span>
+        <span id="cloud-ai-status-badge">Cloud AI / LLM (Gemini)</span>
+      </button>
+
+      <!-- Offline / Cheap Phone Engine Toggle -->
+      <div id="offline-mode-toggle" class="offline-toggle-container" title="Toggle On-Device Rule Engine vs Cloud AI">
+        <span id="offline-icon">📶</span>
+        <span id="offline-status-text">Mode: Online (Cloud AI Tier 2)</span>
+        <span style="font-size:0.7rem; background:#334155; color:#93c5fd; padding:2px 8px; border-radius:999px;">Switch</span>
+      </div>
+
+      <!-- Privacy & Zero OTP Storage Badge -->
+      <div class="privacy-badge">
+        <span>🔒</span>
+        <span>Zero OTP Storage • Client-side PII Scrubbed</span>
+      </div>
+
+      <!-- Theme Switcher (Dark / Light) -->
+      <button id="theme-toggle-btn" class="theme-toggle-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+        <span id="theme-btn-icon">☀️</span>
+        <span id="theme-btn-text">Light Theme</span>
+      </button>
+    </div>
+
+    <!-- Hero Visual Graphic Card -->
+    <div class="hero-visual-card">
+      <div class="hero-text-side">
+        <div class="hero-badge-tag">
+          <span>🛡️</span> <span>VOICE-FIRST DIGITAL SAFETY FOR BHARAT</span>
+        </div>
+        <h2>Speak Any Suspect Message. Photograph Any Deal.</h2>
+        <p>
+          Instant spoken verdicts in Hindi, English, and regional languages. One clear action, predatory contract trap detection, and a one-tap family safety loop so no decision is made alone under pressure.
+        </p>
+        <div class="hero-pills-row">
+          <span class="hero-pill-item">⚡ 0KB Offline Capable</span>
+          <span class="hero-pill-item">🔊 Spoken in 6 Indian Languages</span>
+          <span class="hero-pill-item">👥 SHG & Family Loop</span>
+          <span class="hero-pill-item">🏛️ 1930 National Reporting</span>
+        </div>
+      </div>
+
+      <!-- Futuristic Indian Cyber Shield SVG Graphic -->
+      <div class="hero-illustration-side">
+        <svg width="180" height="180" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Outer Pulsing Rings -->
+          <circle cx="100" cy="100" r="90" stroke="rgba(56, 189, 248, 0.2)" stroke-width="1.5" stroke-dasharray="6 6"/>
+          <circle cx="100" cy="100" r="76" stroke="rgba(249, 115, 22, 0.3)" stroke-width="1.5"/>
+          <!-- Indian Tri-Color Glow Aura -->
+          <circle cx="100" cy="100" r="62" fill="url(#shieldGlow)" opacity="0.15"/>
+          <!-- Shield Body -->
+          <path d="M100 25L150 48C150 115 100 165 100 165C100 165 50 115 50 48L100 25Z" fill="url(#shieldGradient)" stroke="#38bdf8" stroke-width="2.5" filter="drop-shadow(0 4px 16px rgba(14, 165, 233, 0.4))"/>
+          <!-- Emblem / Ashoka Chakra Stylized Motif -->
+          <circle cx="100" cy="90" r="24" stroke="#ffffff" stroke-width="2" opacity="0.9"/>
+          <circle cx="100" cy="90" r="6" fill="#f97316"/>
+          <!-- Radial Spoke Lines -->
+          <path d="M100 66V114M76 90H124M83 73L117 107M117 73L83 107" stroke="#ffffff" stroke-width="1.5" opacity="0.6"/>
+          <!-- Soundwaves & Audio Rays -->
+          <path d="M158 80C163 86 163 94 158 100" stroke="#38bdf8" stroke-width="2" stroke-linecap="round"/>
+          <path d="M166 74C174 84 174 96 166 106" stroke="#38bdf8" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+          <path d="M42 80C37 86 37 94 42 100" stroke="#f97316" stroke-width="2" stroke-linecap="round"/>
+          <path d="M34 74C26 84 26 96 34 106" stroke="#f97316" stroke-width="2" stroke-linecap="round" opacity="0.7"/>
+          <!-- Gradients -->
+          <defs>
+            <radialGradient id="shieldGlow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(100 100) scale(62)">
+              <stop stop-color="#38bdf8"/>
+              <stop offset="1" stop-color="#1e3a8a" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="shieldGradient" x1="50" y1="25" x2="150" y2="165" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#1e3a8a"/>
+              <stop offset="0.5" stop-color="#0f172a"/>
+              <stop offset="1" stop-color="#0369a1"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <!-- App Header Section -->
+    <header class="app-header">
+      <div class="brand-section">
+        <div class="brand-logo">🛡️</div>
+        <div class="brand-titles">
+          <h1>BHAROSA SHIELD <span style="font-size:1.1rem; color:#f97316;">भरोसा शील्ड</span></h1>
+          <p class="tagline" id="brand-tagline">
+            किसी भी संदिग्ध संदेश को भेजें या कागज़ की फ़ोटो लें — सेकंडों में अपनी भाषा में सुनें सच।
+          </p>
+        </div>
+      </div>
+
+      <!-- Core Question Anchor Pill -->
+      <div class="core-question-pill">
+        <span>❓</span>
+        <span id="core-question-text">क्या मुझे इस संदेश या कागज़ पर भरोसा करना चाहिए?</span>
+      </div>
+
+      <!-- Language Selector -->
+      <div class="header-controls">
+        <div class="lang-select-box">
+          <span>🗣️ भाषा / Language:</span>
+          <select id="global-lang-select" aria-label="Select Language">
+            <option value="hi">हिंदी (Hindi) [Primary]</option>
+            <option value="en">English [Primary]</option>
+            <option value="mr">मराठी (Marathi)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="bn">বাংলা (Bengali)</option>
+          </select>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Navigation Tabs -->
+    <nav class="main-nav" style="grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));">
+      <button class="nav-tab-btn active" data-tab="message">
+        <span class="tab-icon">💬</span>
+        <span id="nav-tab-msg-title">संदेश की जाँच</span>
+        <span class="tab-sub" id="nav-tab-msg-sub">SMS / Voice Note</span>
+      </button>
+
+      <button class="nav-tab-btn" data-tab="paper">
+        <span class="tab-icon">📄</span>
+        <span id="nav-tab-paper-title">कागज़ की जाँच</span>
+        <span class="tab-sub" id="nav-tab-paper-sub">लोन / ज़मीन समझौता</span>
+      </button>
+
+      <button class="nav-tab-btn" data-tab="trusted">
+        <span class="tab-icon">👥</span>
+        <span id="nav-tab-trusted-title">भरोसेमंद व्यक्ति</span>
+        <span class="tab-sub" id="nav-tab-trusted-sub">परिवार / SHG अलर्ट</span>
+      </button>
+
+      <button class="nav-tab-btn" data-tab="map">
+        <span class="tab-icon">🗺️</span>
+        <span>Village Scam Map</span>
+        <span class="tab-sub">Roadmap Mockup</span>
+      </button>
+
+      <button class="nav-tab-btn" data-tab="cheap-phones">
+        <span class="tab-icon">📵</span>
+        <span>Cheap Phones & IVR</span>
+        <span class="tab-sub">Offline / Missed Call</span>
+      </button>
+
+      
+
+      <button class="nav-tab-btn" data-tab="report">
+        <span class="tab-icon">🚨</span>
+        <span id="nav-tab-report-title">साइबर रिपोर्ट (1930)</span>
+        <span class="tab-sub" id="nav-tab-report-sub">सरकारी हेल्पलाइन</span>
+      </button>
+    </nav>
+
+    <!-- ============================================== -->
+    <!-- TAB 1: CHECK A MESSAGE (संदेश की जाँच) -->
+    <!-- ============================================== -->
+    <main id="tab-panel-message" class="tab-panel active">
+      <!-- Dynamic Offline Rule Engine Notice -->
+      <div id="offline-mode-banner" class="offline-mode-indicator-box" style="display:none;">
+        <span style="font-size:1.4rem;">📵</span>
+        <div>
+          <strong>On-Device Rule Engine Active (0KB Network Used):</strong>
+          Evaluating strictly via local heuristic patterns (urgent words, APK links, OTP requests, KYC threats). Cloud AI is disabled to simulate cheap 2G phone or offline conditions.
+        </div>
+      </div>
+
+      <div class="card-shell">
+        <div class="card-title-row">
+          <h2 id="msg-section-title">संदेश या वॉइस नोट की तुरंत जाँच करें</h2>
+          <span style="background:rgba(37, 99, 235, 0.2); color:#60a5fa; border:1px solid #2563eb; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:999px;">
+            AI Heuristics + Threat Shield Active
+          </span>
+        </div>
+        <p class="card-subtitle" id="msg-section-sub">
+          कोई भी संदिग्ध SMS, वॉट्सऐप मैसेज यहाँ पेस्ट करें या बोलकर बताएं।
+        </p>
+
+        <!-- Sub Tabs (Text / Voice / Image) -->
+        <div class="sub-input-tabs">
+          <button class="sub-tab-btn active" data-subtab="text">
+            <span>📝</span> <span id="tab-btn-text-label">टेक्स्ट / लिंक पेस्ट करें</span>
+          </button>
+          <button class="sub-tab-btn" data-subtab="voice">
+            <span>🎙️</span> <span id="tab-btn-voice-label">वॉइस नोट रिकॉर्ड करें</span>
+          </button>
+          <button class="sub-tab-btn" data-subtab="image">
+            <span>🖼️</span> <span id="tab-btn-image-label">स्क्रीनशॉट अपलोड करें</span>
+          </button>
+        </div>
+
+        <!-- Presets Selection Bar -->
+        <div class="preset-selector">
+          <label id="msg-presets-label">प्रचलित भारतीय धोखाधड़ी के नमूने (क्लिक करके टेस्ट करें):</label>
+          <div class="preset-chips" id="msg-presets-container">
+            <!-- Populated via app.js -->
+          </div>
+        </div>
+
+        <!-- REALISTIC ANDROID LOCKSCREEN NOTIFICATION PREVIEW -->
+        <div id="live-sms-notification-mockup" class="phone-notification-mockup">
+          <div class="phone-notif-header">
+            <div class="notif-app-badge">
+              <span id="notif-icon">⚡</span>
+              <span id="notif-app-name">Carrier Messages (SMS)</span>
+              <span id="notif-sender-badge" class="notif-sender-pill">AD-BIJLIPAY</span>
+            </div>
+            <span class="notif-time">Just Now • Urgent Notice</span>
+          </div>
+          <div id="notif-preview-text" class="notif-preview-body">
+            "Dear Consumer Your Electricity Power will be disconnected Tonight at 9.30 PM..."
+          </div>
+        </div>
+
+        <!-- TEXT INPUT GROUP -->
+        <div id="msg-text-input-group" class="input-group">
+          <textarea id="msg-input-textarea" class="custom-textarea" rows="4" placeholder="यहाँ SMS, वॉट्सऐप संदेश या लिंक पेस्ट करें..."></textarea>
+          <div style="font-size:0.75rem; color:#94a3b8; margin-top:6px; display:flex; align-items:center; gap:6px;">
+            <span>🔒 Privacy Shield:</span>
+            <span>Any 4-6 digit OTPs or 16-digit card numbers entered are automatically masked and never stored.</span>
+          </div>
+        </div>
+
+        <!-- VOICE INPUT GROUP (Hidden by default) -->
+        <div id="msg-voice-input-group" class="voice-input-box" style="display:none;">
+          <button id="btn-record-voice-note" class="record-btn" title="Tap to record voice">🎙️</button>
+          <div id="record-status-label" style="margin-top:12px; font-weight:700; font-size:0.95rem;">
+            माइक बटन दबाएं और जो मैसेज आया है वह बोलें
+          </div>
+          <p style="font-size:0.8rem; color:#94a3b8; margin-top:4px;">
+            (Supports Hindi, English, and regional dictation)
+          </p>
+        </div>
+
+        <!-- IMAGE INPUT GROUP (Hidden by default) -->
+        <div id="msg-image-input-group" class="voice-input-box" style="display:none;">
+          <input type="file" id="msg-screenshot-input" accept="image/*" style="display:none;" />
+          <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+            <button class="chip-btn" style="padding:10px 20px; font-size:0.95rem;" onclick="document.getElementById('msg-screenshot-input').click()">
+              📁 स्क्रीनशॉट या फोटो चुनें (Upload Screenshot)
+            </button>
+            <button type="button" id="btn-load-sample-msg-ocr" class="chip-btn" style="padding:10px 18px; font-size:0.88rem; background:rgba(59,130,246,0.15); border-color:#3b82f6; color:#93c5fd;">
+              🖼️ टेस्ट हिंदी+अंग्रेजी स्क्रीनशॉट (Run Real Tesseract OCR)
+            </button>
+          </div>
+          <div id="msg-image-preview-box"></div>
+          
+          <!-- Real Tesseract OCR Progress Container -->
+          <div id="ocr-progress-box-msg" class="ocr-progress-container" style="display:none; text-align:left; max-width:480px; margin:14px auto 0 auto;">
+            <div style="display:flex; justify-content:space-between; font-size:0.82rem; font-weight:700; color:#1e40af;">
+              <span id="ocr-status-text-msg">🔍 Initializing Tesseract OCR (Hindi + English)...</span>
+              <span id="ocr-percentage-text-msg">0%</span>
+            </div>
+            <div class="ocr-progress-track">
+              <div id="ocr-progress-bar-fill-msg" class="ocr-progress-fill"></div>
+            </div>
+          </div>
+
+          <p style="font-size:0.8rem; color:#94a3b8; margin-top:8px;">
+            📸 Tesseract.js (Hindi + English) द्वारा वास्तविक क्लाइंट-साइड OCR स्कैन
+          </p>
+        </div>
+
+        <!-- Check Verdict CTA Button -->
+        <button id="btn-analyze-msg" class="cta-btn-primary">
+          🛡️ शील्ड से जाँचें (Check Verdict)
+        </button>
+      </div>
+
+      <!-- Analysis Spinner -->
+      <div id="analysis-loader" class="analysis-loader">
+        <div class="spinner-circle"></div>
+        <h4 style="font-weight:700;">संदेश की पड़ताल की जा रही है...</h4>
+        <p style="font-size:0.85rem; color:#94a3b8;">(Scam signatures, malicious URLs, urgency patterns & threat heuristics)</p>
+      </div>
+
+      <!-- VERDICT RESULT DISPLAY -->
+      <div id="verdict-result-container">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </main>
+
+    <!-- ============================================== -->
+    <!-- TAB 2: CHECK A PAPER (कागज़ की जाँच) -->
+    <!-- ============================================== -->
+    <section id="tab-panel-paper" class="tab-panel">
+      <div class="card-shell">
+        <div class="card-title-row">
+          <h2 id="paper-section-title">कागज़ या समझौते की निष्पक्ष जाँच</h2>
+          <span style="background:rgba(245, 158, 11, 0.2); color:#fbbf24; border:1px solid #d97706; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:999px;">
+            Zero Blind Signatures Policy
+          </span>
+        </div>
+        <p class="card-subtitle" id="paper-section-sub">
+          लोन एग्रीमेंट, नौकरी का ऑफर या ज़मीन के इकरारनामे की फ़ोटो अपलोड करें।
+        </p>
+
+        <!-- STRICT DISCLAIMER BANNER -->
+        <div class="paper-disclaimer-banner">
+          <span style="font-size:1.4rem;">⚠️</span>
+          <span id="paper-disclaimer-text">
+            सुरक्षा नियम: भरोसा शील्ड कभी भी किसी दस्तावेज़ को "Approved" (मंजूर) नहीं कहता। हर क़ानूनी कागज़ में जोखिम होता है।
+          </span>
+        </div>
+
+        <!-- Presets Selection Bar -->
+        <div class="preset-selector">
+          <label id="paper-presets-label">नमूना दस्तावेज़ (क्लिक करके परखें):</label>
+          <div class="preset-chips" id="paper-presets-container">
+            <!-- Populated via app.js -->
+          </div>
+        </div>
+
+        <!-- Document Inspection Action Controls -->
+        <div style="display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap; align-items:center;">
+          <input type="file" id="paper-file-upload" accept="image/*,application/pdf" style="display:none;" />
+          <button class="chip-btn" onclick="document.getElementById('paper-file-upload').click()">
+            📸 नया कागज़ फ़ोटो खींचें / अपलोड करें
+          </button>
+          <button type="button" id="btn-load-sample-paper-ocr" class="chip-btn" style="background:rgba(59,130,246,0.15); border-color:#3b82f6; color:#93c5fd;">
+            🖼️ टेस्ट लोन एग्रीमेंट इमेज (Demo Real OCR)
+          </button>
+          <button type="button" id="btn-toggle-paper-text-input" class="chip-btn" style="background:#1e293b; color:#f8fafc; border-color:#475569;">
+            ✍️ या समझौते का टेक्स्ट सीधे लिखें/पेस्ट करें
+          </button>
+        </div>
+
+        <!-- Collapsible Direct Paper Text Input -->
+        <div id="paper-text-input-group" style="display:none; margin-bottom:18px; background:rgba(30,58,138,0.1); border:1.5px solid #2563eb; border-radius:12px; padding:16px;">
+          <label style="display:block; font-size:0.85rem; font-weight:700; color:#93c5fd; margin-bottom:6px;">
+            📄 समझौते या अनुबंध का टेक्स्ट यहाँ पेस्ट करें (Paste Agreement Text):
+          </label>
+          <textarea id="paper-custom-textarea" class="custom-textarea" rows="6" placeholder="यहाँ कोई भी लोन एग्रीमेंट, ज़मीन बयाना, जॉब ऑफर या किराया अनुबंध पेस्ट करें..."></textarea>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; flex-wrap:wrap; gap:10px;">
+            <button id="btn-analyze-paper-text" class="cta-btn-primary" style="width:auto; padding:10px 22px;">
+              🛡️ इस कागज़ की जाँच करें (Analyze Paper)
+            </button>
+            <span style="font-size:0.8rem; color:#94a3b8;">
+              Mode: <strong id="paper-active-tier-indicator" style="color:#60a5fa;">Cloud AI Tier 2 Active</strong>
+            </span>
+          </div>
+        </div>
+
+        <!-- Real Tesseract OCR Progress for Documents -->
+        <div id="ocr-progress-box-paper" class="ocr-progress-container" style="display:none; margin-bottom:18px;">
+          <div style="display:flex; justify-content:space-between; font-size:0.82rem; font-weight:700; color:#1e40af;">
+            <span id="ocr-status-text-paper">🔍 Scanning Document Text with Tesseract (Hindi + English)...</span>
+            <span id="ocr-percentage-text-paper">0%</span>
+          </div>
+          <div class="ocr-progress-track">
+            <div id="ocr-progress-bar-fill-paper" class="ocr-progress-fill"></div>
+          </div>
+        </div>
+
+        <!-- Uploaded Document Visual Preview -->
+        <div id="paper-image-preview-box" style="display:none; margin-bottom:16px; text-align:center;"></div>
+
+        <!-- Paper Analysis Result Container -->
+        <div id="paper-analysis-result">
+          <!-- Populated dynamically via app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 3: TRUSTED PERSON ALERT (भरोसेमंद व्यक्ति) -->
+    <!-- ============================================== -->
+    <section id="tab-panel-trusted" class="tab-panel">
+      <div class="card-shell">
+        <div class="card-title-row">
+          <h2>👥 भरोसेमंद व्यक्ति अलर्ट (Trusted Person Alert)</h2>
+          <span style="background:rgba(16, 185, 129, 0.2); color:#34d399; border:1px solid #059669; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:999px;">
+            सामूहिक निर्णय (Collective Decision)
+          </span>
+        </div>
+        <p class="card-subtitle">
+          एक टैप में फ़ैसला परिवार या SHG दीदी के साथ मिलकर लें। धोखेबाज़ आपको अकेले में जल्दबाज़ी कराने की कोशिश करते हैं।
+        </p>
+
+        <div style="background:rgba(37, 99, 235, 0.15); border:1px solid #1e3a8a; padding:14px; border-radius:8px; margin-bottom:20px; font-size:0.9rem; color:#93c5fd;">
+          💡 <strong>यह कैसे काम करता है:</strong> जब भी कोई संदिग्ध मैसेज या लोन का कागज़ आए, एक क्लिक पर यह शील्ड आपके चुने हुए भरोसेमंद व्यक्ति (बेटा, बेटी, या महिला बचत गट अध्यक्ष) को वॉट्सऐप पर अलर्ट और आवाज़ भेज देता है।
+        </div>
+
+        <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:12px;">
+          आपके भरोसेमंद संपर्क (Select Active Trusted Recipient):
+        </h3>
+
+        <div class="trusted-contacts-grid" id="trusted-contacts-container">
+          <!-- Populated by app.js with SVG Character Portraits -->
+        </div>
+
+        <div style="display:flex; gap:12px; flex-wrap:wrap;">
+          <button id="btn-add-trusted-contact" class="chip-btn" style="padding:10px 18px; font-weight:700;">
+            ➕ नया भरोसेमंद संपर्क जोड़ें (Add Contact)
+          </button>
+          
+          <button class="cta-btn-primary" style="width:auto; padding:10px 20px;" onclick="openTrustedModal(STATE.currentVerdictData || {rawText: 'Bijli bill scam test', verdict: 'SCAM'})">
+            📲 वॉट्सऐप अलर्ट सिमुलेशन देखें (Test Alert)
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================== -->
+    <!-- TAB 4: VILLAGE SCAM MAP (LATER PHASE MOCKUP) -->
+    <!-- ============================================== -->
+    <section id="tab-panel-map" class="tab-panel">
+      <div class="card-shell">
+        <div class="card-title-row">
+          <h2>🗺️ Village Scam Map (Community Early-Warning Network)</h2>
+          <span style="background:rgba(249, 115, 22, 0.2); color:#fb923c; border:1px solid #ea580c; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:999px;">
+            Roadmap Phase 2 • Abuse-Resistant Design
+          </span>
+        </div>
+        <p class="card-subtitle">
+          User reports build a live map of scam numbers and fake loan apps by district, so a scam seen in one village warns the next.
+        </p>
+
+        <!-- Interactive Visual Radar Display -->
+        <div class="radar-map-widget">
+          <div class="radar-sweep-effect"></div>
+          <!-- 6 Radar coordinate targets matching the 6 sample districts below -->
+          <div class="radar-target-dot" style="top:35%; left:42%;" title="Rohtak Cluster (Haryana)"></div>
+          <div class="radar-target-dot" style="top:58%; left:32%; background:#f59e0b; box-shadow:0 0 12px #f59e0b;" title="Kolhapur Cluster (Maharashtra)"></div>
+          <div class="radar-target-dot" style="top:44%; left:62%;" title="Varanasi Cluster (UP)"></div>
+          <div class="radar-target-dot" style="top:75%; left:48%;" title="Madurai Cluster (Tamil Nadu)"></div>
+          <div class="radar-target-dot" style="top:40%; left:70%;" title="Patna Cluster (Bihar)"></div>
+          <div class="radar-target-dot" style="top:48%; left:22%; background:#f59e0b; box-shadow:0 0 12px #f59e0b;" title="Rajkot Cluster (Gujarat)"></div>
+
+          <div style="position:relative; z-index:2; display:flex; justify-content:space-between; align-items:center;">
+            <div>
+              <span style="font-size:0.75rem; font-weight:800; color:#38bdf8; letter-spacing:1px; text-transform:uppercase;">● COMMUNITY EARLY-WARNING RADAR (ROADMAP PHASE 2)</span>
+              <div style="font-size:1.15rem; font-weight:900; color:#ffffff; margin-top:2px;">6 Sample Districts Monitored</div>
+            </div>
+            <div style="background:rgba(239, 68, 68, 0.25); border:1px solid #ef4444; color:#fca5a5; font-size:0.78rem; font-weight:800; padding:4px 10px; border-radius:999px;">
+              ⚡ Illustrative Sample Data (6 Sample Clusters)
+            </div>
+          </div>
+
+          <div style="position:relative; z-index:2; display:flex; gap:16px; font-size:0.75rem; color:#94a3b8; margin-top:20px;">
+            <span>🛰️ Target Grid: North-Central-South Corridor (Illustrative Sample)</span>
+            <span>🛡️ Anti-Defamation Shield Active (Min 5 Verified Reports)</span>
+          </div>
+        </div>
+
+        <!-- Honesty & Risk Safeguard Callout -->
+        <div class="scam-map-warning-box">
+          <div style="font-weight:800; font-size:0.95rem; margin-bottom:4px; display:flex; align-items:center; gap:6px;">
+            <span>🛡️</span>
+            <span>Why This Feature is Deferred & Protected with Strict Safeguards:</span>
+          </div>
+          <p style="font-size:0.85rem; line-height:1.5;">
+            An unmoderated community map invites spam, malicious reports, and false accusations against innocent local businesses. Therefore:
+            <strong>1) Minimum 5 independent verified complaints</strong> are required before any number or APK appears on the map. 
+            <strong>2) Personal identifiable information (PII) is 100% redacted.</strong> 
+            <strong>3) Cold-start strategy:</strong> Initial maps are seeded with official cybercrime nodal alerts so rural areas are never empty.
+          </p>
+        </div>
+
+        <!-- District Cards Mockup Grid -->
+        <h3 style="font-size:1.05rem; font-weight:700; margin-bottom:12px;">
+          Live District Threat Monitor (Sample Simulation):
+        </h3>
+        <div class="district-grid" id="district-threat-grid">
+          <!-- Populated dynamically via app.js -->
+        </div>
+
+        <!-- Broadcast Simulator -->
+        <div class="broadcast-sim-card">
+          <h4 style="font-weight:800; margin-bottom:6px;">📢 "Warn Neighboring Village" Broadcast Simulation</h4>
+          <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:12px;">
+            Simulate how a verified electricity bill scam detected in Rohtak triggers an automated advisory to 14 Panchayats and SHG WhatsApp groups in neighboring Jhajjar district:
+          </p>
+          <button id="btn-simulate-village-broadcast" class="chip-btn" style="background:#ea580c; color:#ffffff; font-weight:700; border:none; padding:10px 18px;">
+            🚨 Trigger Multi-Village Early Advisory Broadcast
+          </button>
+          <div id="village-broadcast-output" style="margin-top:12px; display:none;"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-panel-cheap-phones" class="tab-panel">
+      <div class="card-shell">
+        <div class="card-title-row">
+          <h2>📵 Working Offline & On Cheap Phones</h2>
+          <span style="background:rgba(16, 185, 129, 0.2); color:#34d399; border:1px solid #059669; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:999px;">
+            Rural Accessibility Architecture
+          </span>
+        </div>
+        <p class="card-subtitle">
+          Designed for intermittent 2G connectivity, cheap Android devices, and non-smartphone users.
+        </p>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:12px; margin-bottom:24px;">
+          <div class="feature-subcard">
+            <div style="font-size:1.2rem; margin-bottom:4px;">⚡ 1. On-Device Rule Engine</div>
+            <p style="font-size:0.82rem; color:#94a3b8;">
+              Evaluates top fraud signatures (urgent words, APK links, OTP requests, KYC threats) locally using regex rules without needing internet or cloud calls.
+            </p>
+          </div>
+          <div class="feature-subcard">
+            <div style="font-size:1.2rem; margin-bottom:4px;">☁️ 2. Cloud AI as Second Tier</div>
+            <p style="font-size:0.82rem; color:#94a3b8;">
+              Cloud LLMs are invoked only when mobile data is present, for nuanced paper contracts and non-standard dialects.
+            </p>
+          </div>
+          <div class="feature-subcard">
+            <div style="font-size:1.2rem; margin-bottom:4px;">📩 3. Queued SMS Delivery</div>
+            <p style="font-size:0.82rem; color:#94a3b8;">
+              If mobile connectivity drops mid-check, the verdict is queued and delivered as a clean 160-character plain text SMS.
+            </p>
+          </div>
+          <div class="feature-subcard">
+            <div style="font-size:1.2rem; margin-bottom:4px;">📞 4. Missed-Call / IVR Fallback</div>
+            <p style="font-size:0.82rem; color:#94a3b8;">
+              Feature phone users without smartphones give a missed call to a toll-free number and get a spoken callback in their language.
+            </p>
+          </div>
+        </div>
+
+       
+        <div class="ivr-container">
+          <div>
+            <h3 style="font-size:1.05rem; font-weight:800; margin-bottom:8px;">
+              📞 Missed-Call & IVR Fallback Simulator
+            </h3>
+            <p style="font-size:0.85rem; color:#94a3b8; margin-bottom:14px; line-height:1.5;">
+              Test how a rural elder with a basic JioBharat or Nokia feature phone gets protected without having the app installed:
+            </p>
+
+           
+            <div id="ivr-active-message-banner" class="ivr-active-msg-card" style="background:#0b1329; border:1.5px solid #3b82f6; border-radius:12px; padding:14px; margin-bottom:14px;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                <span style="font-size:0.75rem; font-weight:800; color:#38bdf8; text-transform:uppercase; letter-spacing:0.5px;">
+                  ● ACTIVE VERIFIED MESSAGE LOADED
+                </span>
+                <span id="ivr-active-verdict-badge" style="background:#dc2626; color:#ffffff; font-size:0.75rem; font-weight:800; padding:2px 8px; border-radius:999px;">
+                  SCAM DETECTED
+                </span>
+              </div>
+              <div id="ivr-active-message-text" style="font-size:0.85rem; color:#cbd5e1; font-style:italic; line-height:1.4; margin-bottom:6px;">
+                "Dear Consumer Your Electricity Power will be disconnected Tonight at 9.30 PM..."
+              </div>
+              <div style="font-size:0.78rem; color:#94a3b8;">
+                Sender: <strong id="ivr-active-sender-badge" style="color:#f8fafc;">AD-BIJLIPAY</strong> • 
+                <a href="javascript:void(0)" onclick="switchMainTab('message')" style="color:#60a5fa; text-decoration:underline;">संदेश बदलें (Change in Tab 1)</a>
+              </div>
+            </div>
+
+            <div class="ivr-box-container">
+              <label style="font-size:0.8rem; font-weight:700; color:#cbd5e1; display:block; margin-bottom:6px;">
+                Enter Mobile Number (or click Quick Test):
+              </label>
+              <div style="display:flex; gap:8px;">
+                <input type="text" id="ivr-phone-input" value="+91 98765 00000" class="ivr-input-field" />
+                <button id="btn-trigger-missed-call" class="chip-btn" style="background:#2563eb; color:white; border:none; padding:8px 16px; font-weight:700;">
+                  Give Missed Call
+                </button>
+              </div>
+            </div>
+
+            <div style="font-size:0.82rem; color:#64748b; line-height:1.4;">
+              💡 <strong>Telephony Realism:</strong> This simulator speaks the <em>exact message verified above</em>, explains the danger in Hindi/English, and responds to keypad presses (1 = Repeat, 2 = Alert SHG, 3 = 1930 Draft).
+            </div>
+          </div>
+
+         
+          <div class="phone-mockup-frame">
+            <div class="phone-screen" id="ivr-phone-screen">
+              <div style="font-size:0.75rem; color:#94a3b8;">Jio 4G • Basic Phone</div>
+
+              
+              <div id="ivr-screen-idle">
+                <div style="font-size:3rem; margin:20px 0;">📱</div>
+                <div style="font-weight:700; font-size:1.1rem; color:#f8fafc;">Ready for Call</div>
+                <div style="font-size:0.8rem; color:#94a3b8; margin-top:6px;">
+                  Toll-Free: 1800-BHAROSA<br>(1800-242-7672)
+                </div>
+              </div>
+
+              <div id="ivr-screen-ringing" style="display:none;" class="incoming-call-animation">
+                <div style="font-size:3rem; margin:10px 0;">📲</div>
+                <div style="font-size:0.85rem; color:#94a3b8;">INCOMING CALL</div>
+                <div style="font-weight:800; font-size:1.25rem; color:#ffffff; margin-top:4px;">BHAROSA SHIELD IVR</div>
+                <div style="font-size:0.8rem; color:#38bdf8;">1800-242-7672 (Toll-Free)</div>
+                <div id="ivr-ringing-sender-subtext" style="margin-top:14px; font-size:0.82rem; color:#fcd34d; background:rgba(245,158,11,0.2); padding:4px 8px; border-radius:6px;">
+                  Verdict for: AD-BIJLIPAY
+                </div>
+              </div>
+
+              <div id="ivr-screen-connected" style="display:none;">
+                <div style="font-size:2rem; margin:6px 0;">🔊</div>
+                <div id="ivr-call-timer" style="font-size:0.8rem; color:#34d399; font-weight:800;">CALL CONNECTED (00:01)</div>
+                <div style="font-weight:700; font-size:0.88rem; margin-top:6px; color:#f8fafc; max-height:110px; overflow-y:auto; text-align:left; background:rgba(15,23,42,0.8); padding:8px 10px; border-radius:6px; border-left:3px solid #38bdf8;" id="ivr-spoken-dialogue-text">
+                  "नमस्ते! भरोसा शील्ड द्वारा आपके संदेश की जाँच..."
+                </div>
+
+                <div style="margin-top:10px;">
+                  <div style="font-size:0.7rem; color:#94a3b8; margin-bottom:4px; font-weight:700;">INTERACTIVE DTMF KEYPAD:</div>
+                  <div class="ivr-dtmf-grid">
+                    <button class="ivr-dtmf-key" onclick="handleIvrKeyPress('1')"><strong>1</strong><small>Repeat</small></button>
+                    <button class="ivr-dtmf-key" onclick="handleIvrKeyPress('2')"><strong>2</strong><small>Alert SHG</small></button>
+                    <button class="ivr-dtmf-key" onclick="handleIvrKeyPress('3')"><strong>3</strong><small>1930 Portal</small></button>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:flex; justify-content:space-around; align-items:center; margin-top:16px;">
+                <button id="btn-accept-ivr-call" class="call-control-btn accept" title="Answer Call">📞</button>
+                <button id="btn-hangup-ivr-call" class="call-control-btn reject" title="End Call">✕</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+       
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px; margin-top:24px;">
+         
+          <div class="feature-subcard" style="border-left:4px solid #10b981;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+              <div style="font-weight:800; font-size:0.95rem; color:#059669; display:flex; align-items:center; gap:6px;">
+                <span>⚡</span> <span>PWA Offline Engine & Cache</span>
+              </div>
+              <span id="pwa-status-badge" style="background:#dcfce7; color:#15803d; font-size:0.7rem; font-weight:800; padding:2px 8px; border-radius:999px;">
+                Service Worker Active ✓
+              </span>
+            </div>
+            <p style="font-size:0.84rem; color:#475569; line-height:1.4;">
+              Bharosa Shield is engineered as an offline-first Progressive Web App. The A1–A6 multi-agent engine, Tesseract OCR, and legal rules run entirely on-device with <strong>0KB network usage</strong> when offline.
+            </p>
+            <div style="margin-top:10px; background:#f0fdf4; border:1px solid #bbf7d0; padding:8px 12px; border-radius:6px; font-size:0.78rem; color:#166534;">
+              ✓ Pre-cached Application Shell • Offline-Ready for rural 2G/No-Signal zones.
+            </div>
+          </div>
+
+          
+          <div class="feature-subcard" style="border-left:4px solid #3b82f6;">
+            <div style="font-weight:800; font-size:0.95rem; color:#1e40af; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+              <span>📲</span> <span>Android "Share to Bharosa" Target</span>
+            </div>
+            <p style="font-size:0.84rem; color:#475569; line-height:1.4;">
+              Registered with Android's native <code>Web Share Target API</code>. When an elder receives a threat in WhatsApp or SMS, they simply tap "Share" and pick Bharosa Shield.
+            </p>
+            <div style="margin-top:10px; background:#eff6ff; border:1px dashed #93c5fd; padding:8px 12px; border-radius:6px; font-size:0.78rem; color:#1e3a8a; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+              <span>Test Native Android Share Menu:</span>
+              <button class="chip-btn" style="background:#2563eb; color:white; border:none; padding:4px 12px;" onclick="openAndroidShareSheetModal()">
+                🚀 Open Share Sheet Simulator
+              </button>
+            </div>
+          </div>
+        </div>
+
+       
+        <div class="feature-subcard" style="margin-top:20px; border-left:4px solid #f59e0b; background:#0f172a;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+            <div>
+              <h3 style="font-size:1.05rem; font-weight:800; color:#fbbf24; display:flex; align-items:center; gap:6px;">
+                <span>⏱️</span> <span>10-Minute Cognitive Friction Rule (शीतलता टाइमर)</span>
+              </h3>
+              <p style="font-size:0.82rem; color:#94a3b8; margin-top:2px;">
+                Scammers rely on synthetic panic ("Power cuts in 15 mins!"). No legitimate Indian bank or discom acts in 10 minutes.
+              </p>
+            </div>
+            <span style="background:rgba(245,158,11,0.2); color:#fbbf24; border:1px solid #f59e0b; font-size:0.72rem; font-weight:800; padding:3px 10px; border-radius:999px;">
+              Anti-Panic Psychological Shield
+            </span>
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:space-around; flex-wrap:wrap; gap:20px; margin:16px 0;">
+           
+            <div class="breathing-pulse-ring">
+              <div class="timer-countdown-big" id="standalone-timer-display">10:00</div>
+              <div style="font-size:0.65rem; color:#38bdf8; font-weight:700; margin-top:4px;" id="breathing-guide-label">🌬️ सांस लें (Inhale)</div>
+            </div>
+
+            <div style="max-width:380px; text-align:left;">
+              <p style="font-size:0.85rem; color:#cbd5e1; line-height:1.5; margin-bottom:12px;">
+                <strong>💡 Why the 10-minute pause works:</strong> Adrenaline floods the brain during panic. By sitting down, drinking a glass of water, and letting this timer run, your logical prefrontal cortex regains control. Your money is 100% safe while you wait.
+              </p>
+              <div style="display:flex; gap:8px; flex-wrap:wrap;">
+                <button id="btn-standalone-timer-toggle" class="chip-btn" style="background:#22c55e; color:white; border:none; padding:8px 16px; font-weight:700;" onclick="toggleStandaloneFrictionTimer()">
+                  ▶️ Start 10-Min Timer
+                </button>
+                <button class="chip-btn" style="background:#334155; color:#f8fafc; border:none; padding:8px 14px;" onclick="resetStandaloneFrictionTimer()">
+                  🔄 Reset (10:00)
+                </button>
+                <button class="chip-btn" style="background:transparent; color:#38bdf8; border:1px solid #0284c7; padding:8px 12px; font-size:0.78rem;" onclick="jumpStandaloneFrictionTimerTo5s()" title="Jump to 5 seconds remaining for instant demo evaluation">
+                  ⚡ Demo: Jump to 5s
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-subcard" style="margin-top:20px; border-left:4px solid #16a34a;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px;">
+            <div>
+              <h3 style="font-size:1.05rem; font-weight:800; color:#15803d; display:flex; align-items:center; gap:6px;">
+                <span>💳</span> <span>Call-Back Rule: "Call the number on your card, not the one in the SMS"</span>
+              </h3>
+              <p style="font-size:0.82rem; color:#475569; margin-top:2px;">
+                Scammers put fake contact numbers in text messages. Always turn your physical ATM card around to find the verified toll-free line.
+              </p>
+            </div>
+            <button class="chip-btn" style="background:#16a34a; color:white; border:none; font-weight:700;" onclick="flipAtmCardVisual()">
+              🔄 Flip Debit Card (Click to View)
+            </button>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px; align-items:center; margin-top:14px;">
+           
+            <div class="flip-card-container" onclick="flipAtmCardVisual()">
+              <div class="flip-card-inner" id="interactive-atm-card-inner">
+               
+                <div class="atm-card-face front">
+                  <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <span style="font-weight:800; font-size:0.95rem; letter-spacing:1px;">BHARAT NATIONAL BANK</span>
+                    <span style="font-size:0.75rem; color:#93c5fd; font-weight:700;">DEBIT CARD</span>
+                  </div>
+                  <div class="atm-chip"></div>
+                  <div style="font-family:monospace; font-size:1.15rem; letter-spacing:2.5px; color:#f8fafc; font-weight:700;">
+                    4592 •••• •••• 4108
+                  </div>
+                  <div style="display:flex; justify-content:space-between; align-items:flex-end;">
+                    <div>
+                      <div style="font-size:0.6rem; color:#94a3b8;">CARDHOLDER</div>
+                      <div style="font-size:0.85rem; font-weight:700;">RAMLAL SHARMA</div>
+                    </div>
+                    <div style="text-align:right;">
+                      <div style="font-size:0.6rem; color:#94a3b8;">VALID THRU</div>
+                      <div style="font-size:0.85rem; font-weight:700;">12/28</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="atm-card-face back">
+                  <div class="atm-back-stripe"></div>
+                  <div style="font-size:0.65rem; color:#94a3b8; text-align:right; margin-bottom:2px;">Authorized Signature Panel</div>
+                  <div class="atm-back-signature">
+                    <span>CVV: ***</span>
+                  </div>
+                  <div class="atm-tollfree-box">
+                    <div style="font-size:0.72rem; color:#22c55e; font-weight:800; text-transform:uppercase;">
+                      ★ OFFICIAL CUSTOMER HELPLINE PRINTED HERE ★
+                    </div>
+                    <div style="font-size:1.15rem; font-weight:900; color:#ffffff; font-family:monospace; margin:2px 0;">
+                      📞 1800-425-3800 / 1800-112211
+                    </div>
+                    <div style="font-size:0.68rem; color:#86efac;">
+                      Always dial THIS number. NEVER call any number sent in an SMS!
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <div style="background:#ffffff; border:1px solid #bbf7d0; border-radius:10px; padding:12px 14px; margin-bottom:10px;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+                  <strong style="color:#166534; font-size:0.88rem;">🗣️ Word-for-Word Bank Call-Back Script:</strong>
+                  <button class="chip-btn" style="font-size:0.72rem; padding:2px 8px; background:#16a34a; color:white; border:none;" onclick="speakAloud('नमस्ते, मुझे खाता बंद होने का एक संदिग्ध संदेश मिला है। कृपया अपने कंप्यूटर में देखकर बताएं कि क्या वास्तव में कोई समस्या है?')">
+                    🔊 Listen Script
+                  </button>
+                </div>
+                <p style="font-size:0.82rem; color:#1e293b; font-style:italic; line-height:1.45;">
+                  "नमस्ते, मुझे खाता बंद होने का एक संदिग्ध संदेश मिला है। कृपया अपने कंप्यूटर में देखकर बताएं कि क्या वास्तव में कोई समस्या है?"
+                </p>
+                <div style="font-size:0.75rem; color:#64748b; margin-top:4px;">
+                  <em>English: "Hello, I received a message claiming my account is suspended. Please verify my actual account status on your internal banking computer."</em>
+                </div>
+              </div>
+
+              <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:10px 12px; font-size:0.75rem; color:#334155;">
+                <div style="font-weight:800; color:#0f172a; margin-bottom:4px;">OFFICIAL 24x7 EMERGENCY NUMBERS:</div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px;">
+                  <div>• <strong>SBI:</strong> 1800 1234 / 1800 2100</div>
+                  <div>• <strong>HDFC:</strong> 1800 1600 / 1800 202 6161</div>
+                  <div>• <strong>ICICI:</strong> 1800 1080</div>
+                  <div>• <strong>PNB:</strong> 1800 180 2222</div>
+                  <div>• <strong>National Power Discom:</strong> 1912</div>
+                  <div>• <strong>National Cybercrime:</strong> 1930</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-subcard" style="margin-top:20px; border-left:4px solid #ef4444; background:#0f172a;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:12px;">
+            <div>
+              <h3 style="font-size:1.05rem; font-weight:800; color:#f87171; display:flex; align-items:center; gap:6px;">
+                <span>💸</span> <span>UPI Collect-Request Explainer (यूपीआई का स्वर्णिम नियम)</span>
+              </h3>
+              <p style="font-size:0.82rem; color:#94a3b8; margin-top:2px;">
+                Scammers send deceptive "Collect Requests" claiming: "Enter your PIN to receive ₹4,999 cashback/refund".
+              </p>
+            </div>
+            <button class="chip-btn" style="background:#dc2626; color:white; border:none; font-weight:700;" onclick="speakAloud('गोल्डन नियम: यूपीआई पिन केवल पैसे भेजने के लिए होता है। पैसे पाने के लिए कभी पिन नहीं लगता।')">
+              🔊 Listen UPI Golden Rule
+            </button>
+          </div>
+
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:20px; align-items:center;">
+           
+            <div class="upi-mock-screen">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                <span style="font-size:0.75rem; color:#94a3b8; font-weight:700;">BHARAT INTERFACE FOR PAYMENTS</span>
+                <span class="upi-collect-badge">COLLECT REQUEST</span>
+              </div>
+              <div style="background:#1e293b; border-radius:10px; padding:12px; margin-bottom:12px; border:1px solid #334155;">
+                <div style="font-size:0.75rem; color:#94a3b8;">Requested by:</div>
+                <div style="font-size:0.95rem; font-weight:800; color:#f8fafc;">Bharat Power Discom Cashback</div>
+                <div style="font-size:0.75rem; color:#38bdf8;">refund-cashback@icici</div>
+                <div style="font-size:1.6rem; font-weight:900; color:#f87171; margin-top:8px;">₹ 4,999.00</div>
+                <div style="font-size:0.75rem; color:#94a3b8; font-style:italic;">Remark: "Claim excess bill refund"</div>
+              </div>
+
+              <!-- Interactive Quiz Action -->
+              <div style="font-size:0.82rem; font-weight:800; color:#cbd5e1; margin-bottom:8px;">
+                ❓ If you enter your 4-digit or 6-digit UPI PIN here, what happens?
+              </div>
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                <button class="chip-btn" style="background:#334155; color:#cbd5e1; border:1px solid #475569; padding:8px;" onclick="testUpiQuizChoice('receive')">
+                  I will RECEIVE ₹4,999 ✕
+                </button>
+                <button class="chip-btn" style="background:#1e293b; color:#34d399; border:1.5px solid #10b981; padding:8px; font-weight:700;" onclick="testUpiQuizChoice('deduct')">
+                  Money will be DEDUCTED! ✓
+                </button>
+              </div>
+              <div id="upi-quiz-feedback-box" style="display:none; margin-top:10px; padding:8px 12px; border-radius:6px; font-size:0.8rem; font-weight:700;"></div>
+            </div>
+
+            <div>
+              <div class="upi-golden-rule-banner">
+                <div style="font-size:1.05rem; font-weight:900; margin-bottom:6px; display:flex; align-items:center; gap:6px;">
+                  <span>🛑</span> <span>THE GOLDEN RULE OF UPI:</span>
+                </div>
+                <ul style="font-size:0.88rem; line-height:1.6; padding-left:18px; margin:0;">
+                  <li><strong>ENTERING YOUR UPI PIN ALWAYS SENDS MONEY OUT OF YOUR ACCOUNT.</strong></li>
+                  <li><strong>RECEIVING MONEY NEVER REQUIRES ENTERING A PIN OR SCANNING A QR CODE.</strong></li>
+                  <li>Scammers label collect requests as "Refund" or "Cashback Voucher" to trick victims into entering their PIN.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>\
+        <div class="voice-tester-box" style="margin-top:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div>
+              <div style="font-weight:800; font-size:1.05rem; color:#0f172a; display:flex; align-items:center; gap:6px;">
+                <span>🗣️</span> <span>Regional Voice Synthesis Diagnostic & Testing Lab</span>
+              </div>
+              <p style="font-size:0.82rem; color:#64748b; margin-top:2px;">
+                Windows and Android browsers often lack native Tamil, Telugu, and Bengali TTS voices. Test each voice and our phonetic fallback below:
+              </p>
+            </div>
+            <button class="chip-btn" style="font-size:0.75rem; padding:6px 12px; background:#1e3a8a; color:white; border:none;" onclick="testBrowserVoices()">
+              🔄 Re-Probe Browser Voices
+            </button>
+          </div>
+          <div class="voice-test-grid" id="regional-voice-probe-chips">
+           
+          </div>
+
+          <div id="regional-voice-test-log" style="margin-top:12px; background:#090e1a; border:1px solid #1e293b; border-radius:8px; padding:10px 14px; font-size:0.8rem; color:#cbd5e1; font-family:monospace; display:none;">
+         
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section id="tab-panel-report" class="tab-panel">
+      <div class="card-shell">
+        <div class="card-title-row">
+          <h2 style="color:#f87171;">🚨 राष्ट्रीय साइबर अपराध रिपोर्टिंग गाइड (1930)</h2>
+          <span style="background:rgba(239, 68, 68, 0.2); color:#fca5a5; border:1px solid #ef4444; font-size:0.8rem; font-weight:700; padding:4px 12px; border-radius:999px;">
+            Official Channels Only
+          </span>
+        </div>
+        <p class="card-subtitle">
+          भरोसा शील्ड आपकी सुरक्षा का मार्गदर्शक है, लेकिन आधिकारिक रिपोर्ट हमेशा सरकारी चैनलों पर ही दर्ज की जानी चाहिए।
+        </p>
+
+        <div style="background:rgba(239, 68, 68, 0.15); border:1.5px solid #ef4444; border-radius:12px; padding:18px; margin-bottom:24px;">
+          <div style="display:flex; align-items:center; gap:8px; font-weight:800; font-size:1.1rem; color:#f87171; margin-bottom:6px;">
+            <span>⏱️</span>
+            <span>गोल्डन ऑवर नियम (The First 24 Hours Matter Most)</span>
+          </div>
+          <p style="font-size:0.92rem; color:#fecaca; line-height:1.5;">
+            यदि किसी कारणवश पैसा कट गया है, तो <strong>तुरंत 1930 पर कॉल करें</strong>। नेशनल साइबर हेल्पलाइन बैंक नोडल अधिकारियों के ज़रिए धोखाधड़ी वाले खाते को फ़्रीज़ करवाकर आपके पैसे वापस दिलाने में मदद करती है।
+          </p>
+          <div style="margin-top:12px;">
+            <a href="tel:1930" class="report-portal-btn" style="text-decoration:none; display:inline-flex; width:auto;">
+              📞 अभी 1930 डायल करें (Instant Dial)
+            </a>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number" style="background:#2563eb;">1</div>
+          <div class="step-body">
+            <h4>1930 पर कॉल करें या cybercrime.gov.in खोलें</h4>
+            <p style="color:#94a3b8;">गृह मंत्रालय के अधिकृत पोर्टल पर जाएं। वित्तीय धोखाधड़ी के लिए 'Report Financial Fraud' विकल्प चुनें।</p>
+            <div style="margin-top:8px;">
+              <a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" style="color:#60a5fa; font-weight:700; font-size:0.9rem; text-decoration:underline;">
+                🌐 Visit cybercrime.gov.in (Official Portal) ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number" style="background:#2563eb;">2</div>
+          <div class="step-body">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:4px;">
+              <h4>यह शिकायत ड्राफ्ट कॉपी करके पोर्टल पर पेस्ट करें:</h4>
+              <span id="cybercrime-active-case-badge" style="background:rgba(37,99,235,0.2); color:#60a5fa; border:1px solid #2563eb; font-size:0.75rem; font-weight:800; padding:2px 10px; border-radius:999px;">
+                Case: AD-BIJLIPAY (Electricity Fraud)
+              </span>
+            </div>
+            <p style="color:#94a3b8;">भरोसा शील्ड द्वारा जाँचे गए वास्तविक संदेश के आधार पर स्वतः तैयार किया गया औपचारिक ड्राफ्ट:</p>
+            <div class="copy-snippet-box" id="cybercrime-formatted-snippet">
+Generating dynamic complaint dossier from verified message...
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; flex-wrap:wrap; gap:10px;">
+              <button id="btn-copy-cybercrime-summary" class="chip-btn" style="font-weight:700; color:#60a5fa; border-color:#2563eb; background:#1e293b; padding:8px 16px;">
+                📋 संपूर्ण शिकायत ड्राफ्ट कॉपी करें (Copy for Portal)
+              </button>
+              <span style="font-size:0.75rem; color:#94a3b8;">
+                ✓ Auto-synced with active message from Tab 1
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="guide-step">
+          <div class="step-number" style="background:#2563eb;">3</div>
+          <div class="step-body">
+            <h4>संचार साथी चक्षु (Chakshu) पर फ़र्ज़ी नंबर रिपोर्ट करें</h4>
+            <p style="color:#94a3b8;">दूरसंचार विभाग (DoT) के 'चक्षु' पोर्टल पर संदिग्ध कॉल या एसएमएस वाले नंबर की रिपोर्ट करें ताकि सिम ब्लॉक किया जा सके।</p>
+            <div style="margin-top:8px;">
+              <a href="https://sancharsaathi.gov.in/sfc/" target="_blank" rel="noopener noreferrer" style="color:#60a5fa; font-weight:700; font-size:0.9rem; text-decoration:underline;">
+                📱 Report on Sanchar Saathi Chakshu ↗
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+  <div id="demo-story-modal" class="demo-story-modal">
+    <div class="demo-story-card">
+      <button class="modal-close-btn" onclick="closeDemoStoryModal()">✕</button>
+
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+    
+        <div class="character-avatar-wrapper" style="border-color:#f97316;">
+          <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+            <circle cx="24" cy="24" r="24" fill="#fef3c7"/>
+            <circle cx="24" cy="18" r="10" fill="#f97316"/>
+            <path d="M12 40C12 32 18 28 24 28C30 28 36 32 36 40" fill="#b45309"/>
+            <circle cx="24" cy="14" r="2" fill="#ffffff"/>
+          </svg>
+        </div>
+        <div>
+          <h3 style="font-size:1.25rem; font-weight:800;">Demo Story: Smt. Kamla Devi's KYC Scare</h3>
+          <p style="font-size:0.85rem; color:#94a3b8;">
+            A real-world walkthrough of how Bharosa Shield saves an elderly pensioner from financial fraud.
+          </p>
+        </div>
+      </div>
+
+      <!-- Step Progress Indicators -->
+      <div class="demo-steps-track">
+        <div class="demo-step-bubble active" id="demo-step-bubble-1" onclick="setDemoStoryStep(1)">
+          <div class="step-circle">1</div>
+          <div class="step-title-label">SMS Arrives</div>
+        </div>
+        <div class="demo-step-bubble" id="demo-step-bubble-2" onclick="setDemoStoryStep(2)">
+          <div class="step-circle">2</div>
+          <div class="step-title-label">Spoken Verdict</div>
+        </div>
+        <div class="demo-step-bubble" id="demo-step-bubble-3" onclick="setDemoStoryStep(3)">
+          <div class="step-circle">3</div>
+          <div class="step-title-label">Daughter Alert</div>
+        </div>
+        <div class="demo-step-bubble" id="demo-step-bubble-4" onclick="setDemoStoryStep(4)">
+          <div class="step-circle">4</div>
+          <div class="step-title-label">1930 Handoff</div>
+        </div>
+      </div>
+
+      <div class="demo-scene-box" id="demo-story-scene-content">
+       
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <button id="btn-demo-prev" class="chip-btn" onclick="navDemoStory(-1)">← Previous Step</button>
+        <span id="demo-step-counter" style="font-size:0.85rem; font-weight:700; color:#94a3b8;">Step 1 of 4</span>
+        <button id="btn-demo-next" class="cta-btn-primary" style="width:auto; padding:10px 22px;" onclick="navDemoStory(1)">Next Step →</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div id="trusted-alert-modal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close-btn" onclick="closeTrustedModal()">✕</button>
+
+      <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px;">
+        <span style="font-size:1.8rem;">📱</span>
+        <div>
+          <h3 style="font-size:1.2rem; font-weight:800;">वॉट्सऐप अलर्ट सिमुलेशन (Trusted Alert)</h3>
+          <p style="font-size:0.85rem; color:#94a3b8;">
+            भेजने वाले: <span id="modal-trusted-contact-name" style="font-weight:700; color:#60a5fa;">सुनीता ताई (SHG लीडर)</span>
+          </p>
+        </div>
+      </div>
+
+    
+      <div class="whatsapp-simulation-screen">
+        <div style="text-align:center; font-size:0.75rem; color:#8696a0; margin-bottom:8px;">
+          🔒 End-to-end encrypted family alert
+        </div>
+
+       
+        <div class="wa-chat-bubble sender-me" id="wa-simulated-text">
+        
+        </div>
+
+      
+        <div id="simulated-reply-feed" style="max-height:160px; overflow-y:auto; display:flex; flex-direction:column; gap:8px;">
+       
+        </div>
+      </div>
+
+ 
+      <div style="margin-bottom:14px;">
+        <label style="display:block; font-size:0.8rem; font-weight:700; color:#cbd5e1; margin-bottom:6px;">
+          परिवार / SHG दीदी का त्वरित जवाब (क्लिक करके टेस्ट करें):
+        </label>
+        <div class="shg-response-actions">
+          <button id="sim-action-stop" class="shg-reply-btn danger">
+            🛑 "रुकिए! बिल्कुल पैसे मत भेजिए, यह फ़र्ज़ी है!"
+          </button>
+          <button id="sim-action-call" class="shg-reply-btn call">
+            📞 "मैं आपको तुरंत फ़ोन कर रही हूँ, बात करते हैं।"
+          </button>
+          <button id="sim-action-verify" class="shg-reply-btn warning">
+            ⏳ "रुकिए, कल सुबह बैंक में जाकर खुद जाँचेंगे।"
+          </button>
+        </div>
+      </div>
+
+    
+      <div style="border-top:1px solid #1e293b; padding-top:14px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <button id="btn-open-real-whatsapp" class="chip-btn" style="background:#25d366; color:#ffffff; border:none; padding:10px 16px; font-weight:700;">
+          💬 असली वॉट्सऐप पर खोलें (Open in WhatsApp)
+        </button>
+        <button class="chip-btn" onclick="closeTrustedModal()">बंद करें (Close)</button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="benchmark-modal" class="benchmark-modal">
+    <div class="benchmark-card">
+      <button class="modal-close-btn" onclick="closeBenchmarkModal()">✕</button>
+
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <span style="font-size:2rem;">📊</span>
+        <div>
+          <h3 style="font-size:1.3rem; font-weight:800;">A1–A6 Engine Benchmark Suite (Evidence)</h3>
+          <p style="font-size:0.85rem; color:#94a3b8;">
+            Live evaluation against 85 authentic Indian scam, banking, utility, and legitimate OTP messages.
+          </p>
+        </div>
+      </div>
+
+      <div class="benchmark-metrics-grid">
+        <div class="metric-card">
+          <div style="font-size:0.75rem; font-weight:700; color:#64748b; text-transform:uppercase;">Precision</div>
+          <div class="metric-number" id="metric-precision">100.0%</div>
+          <div style="font-size:0.72rem; color:#10b981; font-weight:600; margin-top:2px;">0 False Positives</div>
+        </div>
+        <div class="metric-card">
+          <div style="font-size:0.75rem; font-weight:700; color:#64748b; text-transform:uppercase;">Recall (Detection)</div>
+          <div class="metric-number" id="metric-recall" style="color:#10b981;">100.0%</div>
+          <div style="font-size:0.72rem; color:#10b981; font-weight:600; margin-top:2px;">All Scams Caught</div>
+        </div>
+        <div class="metric-card">
+          <div style="font-size:0.75rem; font-weight:700; color:#64748b; text-transform:uppercase;">False Positive Rate</div>
+          <div class="metric-number" id="metric-fpr" style="color:#059669;">0.00%</div>
+          <div style="font-size:0.72rem; color:#64748b; font-weight:600; margin-top:2px;">Legit Messages Safe</div>
+        </div>
+        <div class="metric-card">
+          <div style="font-size:0.75rem; font-weight:700; color:#64748b; text-transform:uppercase;">Overall Accuracy</div>
+          <div class="metric-number" id="metric-accuracy" style="color:#8b5cf6;">100.0%</div>
+          <div style="font-size:0.72rem; color:#8b5cf6; font-weight:600; margin-top:2px;" id="benchmark-accuracy-subtext">85 / 85 Correct</div>
+        </div>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; flex-wrap:wrap; gap:8px;">
+        <h4 style="font-size:0.95rem; font-weight:800;">Message-by-Message Test Execution Log:</h4>
+        <button id="btn-re-run-benchmark" class="chip-btn" style="background:#2563eb; color:white; border:none; padding:6px 14px; font-weight:700;">
+          🔄 Re-run All 85 Tests
+        </button>
+      </div>
+
+      <div class="benchmark-table-wrapper">
+        <table class="benchmark-table" id="benchmark-results-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Category</th>
+              <th>Sender</th>
+              <th>Expected</th>
+              <th>Predicted</th>
+              <th>Confidence</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="benchmark-table-body">
+          
+          </tbody>
+        </table>
+      </div>
+
+      <div style="margin-top:16px; text-align:right;">
+        <button class="chip-btn" onclick="closeBenchmarkModal()">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cloud-ai-settings-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width:580px;">
+      <button class="modal-close-btn" onclick="closeCloudAiModal()">✕</button>
+
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+        <span style="font-size:2rem;">☁️</span>
+        <div>
+          <h3 style="font-size:1.25rem; font-weight:800;">Cloud AI Tier 2: LLM Contract Intelligence</h3>
+          <p style="font-size:0.85rem; color:#94a3b8;">
+            Connects Google Gemini LLM for deep reasoning on complex legal papers & agreements.
+          </p>
+        </div>
+      </div>
+
+      <div style="background:rgba(16,185,129,0.12); border:1px solid #10b981; border-radius:8px; padding:12px 14px; margin-bottom:16px; font-size:0.85rem; color:#a7f3d0; line-height:1.5;">
+        <strong>⚡ 2-Tier Architecture Guarantee:</strong><br>
+        • <strong>Tier 1 (Offline Mode):</strong> Pure on-device regex rule engine (0KB data, zero cloud calls, instant).<br>
+        • <strong>Tier 2 (Online Mode):</strong> Cloud AI LLM evaluates compounding APR, distant arbitration, and custom predatory traps.
+      </div>
+
+      <div style="margin-bottom:16px;">
+        <label style="display:block; font-size:0.85rem; font-weight:700; color:#f8fafc; margin-bottom:6px;">
+          Google Gemini API Key (Optional for Live LLM Calls):
+        </label>
+        <div style="display:flex; gap:8px;">
+          <input type="password" id="gemini-api-key-input" placeholder="AIzaSy... (Saved locally in browser)" class="custom-textarea" style="min-height:auto; height:42px; padding:8px 12px; font-family:monospace;" />
+          <button id="btn-save-gemini-key" class="chip-btn" style="background:#059669; color:white; border:none; padding:8px 18px; font-weight:700; white-space:nowrap;">
+            Save Key
+          </button>
+        </div>
+        <p style="font-size:0.75rem; color:#94a3b8; margin-top:4px;">
+          Key is stored strictly in your browser's <code>localStorage</code>. If omitted, the engine uses our pre-calibrated Deep Semantic Cloud Reasoner.
+        </p>
+      </div>
+
+      <div style="margin-bottom:18px;">
+        <label style="display:block; font-size:0.82rem; font-weight:700; color:#cbd5e1; margin-bottom:6px;">
+          Select LLM Model:
+        </label>
+        <select id="gemini-model-select" class="custom-textarea" style="min-height:auto; height:40px; padding:6px 10px; cursor:pointer;">
+          <option value="gemini-1.5-flash">Gemini 1.5 Flash (Recommended: Fast & Accurate for Indian Legal Agreements)</option>
+          <option value="gemini-2.0-flash">Gemini 2.0 Flash (Next-Gen High Speed)</option>
+          <option value="gemini-1.5-pro">Gemini 1.5 Pro (Deep Multi-Clause Reasoning)</option>
+        </select>
+      </div>
+
+      <div id="gemini-key-status-box" style="background:#090e1a; border:1px solid #1e293b; border-radius:8px; padding:10px 14px; font-size:0.82rem; color:#cbd5e1; margin-bottom:16px;">
+        Status: <span id="gemini-status-text" style="color:#34d399; font-weight:700;">Deep Semantic Cloud Intelligence Active</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center;">
+        <button id="btn-clear-gemini-key" class="chip-btn" style="color:#f87171; border-color:#ef4444; background:transparent;">
+          Clear Key
+        </button>
+        <button class="chip-btn" onclick="closeCloudAiModal()" style="background:#2563eb; color:white; border:none; padding:8px 20px; font-weight:700;">
+          Done
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="android-share-sheet-modal" class="modal-overlay">
+    <div class="android-share-sheet-drawer">
+      <div class="share-sheet-handle"></div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <span style="font-weight:800; font-size:1.05rem; color:#f8fafc;">📲 Share via Android System</span>
+        <button class="modal-close-btn" style="position:static;" onclick="closeAndroidShareSheetModal()">✕</button>
+      </div>
+
+      <div style="margin-bottom:12px;">
+        <label style="font-size:0.75rem; color:#94a3b8; font-weight:700; display:block; margin-bottom:6px;">SELECT INCOMING THREAT MESSAGE TO SHARE:</label>
+        <select id="android-share-payload-select" class="custom-textarea" style="min-height:auto; height:38px; padding:6px 8px; font-size:0.82rem; cursor:pointer;" onchange="updateAndroidSharePreview()">
+          <option value="bijli">⚡ Electricity Night Disconnection Threat (AD-BIJLIPAY)</option>
+          <option value="sbi_kyc">🏦 SBI YONO Suspended KYC Phishing APK (VK-SBIYONO)</option>
+          <option value="task_scam">💼 YouTube Like ₹3,500 Daily Part-Time Offer (WhatsApp)</option>
+          <option value="upi_collect">💸 Fake Cashback UPI Collect Request ₹4,999</option>
+        </select>
+      </div>
+
+      <div id="android-share-preview-box" style="background:#090e1a; border:1px solid #334155; border-radius:8px; padding:10px 12px; font-size:0.8rem; color:#cbd5e1; font-style:italic; max-height:75px; overflow-y:auto; margin-bottom:14px;">
+        "Dear Consumer Your Electricity Power will be disconnected Tonight at 9.30 PM..."
+      </div>
+
+      <div style="font-size:0.75rem; color:#94a3b8; font-weight:700;">CHOOSE TARGET APP (TAP BHAROSA SHIELD):</div>
+      <div class="share-app-grid">
+        <div class="share-app-item" onclick="triggerAndroidShareApp('whatsapp')">
+          <div class="share-app-icon" style="background:#25d366; color:white;">💬</div>
+          <span class="share-app-label">WhatsApp</span>
+        </div>
+        <div class="share-app-item" onclick="triggerAndroidShareApp('messages')">
+          <div class="share-app-icon" style="background:#0284c7; color:white;">📩</div>
+          <span class="share-app-label">Messages</span>
+        </div>
+        <div class="share-app-item" onclick="triggerAndroidShareApp('gmail')">
+          <div class="share-app-icon" style="background:#ea4335; color:white;">✉️</div>
+          <span class="share-app-label">Gmail</span>
+        </div>
+        <div class="share-app-item" onclick="triggerAndroidShareApp('bharosa')" style="background:rgba(37,99,235,0.25); border:1.5px solid #3b82f6;">
+          <div class="share-app-icon" style="background:#1e3a8a; color:#38bdf8; border:2px solid #38bdf8;">🛡️</div>
+          <span class="share-app-label" style="color:#60a5fa;">Bharosa Shield</span>
+        </div>
+      </div>
+      <div style="font-size:0.72rem; color:#94a3b8; text-align:center; margin-top:14px;">
+        Tap <strong>Bharosa Shield</strong> to simulate Android Web Share Target ingestion.
+      </div>
+    </div>
+  </div>
+
+  <div id="agents-architecture-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width:920px; max-height:90vh; overflow-y:auto;">
+      <button class="modal-close-btn" onclick="closeAgentsArchitectureModal()">✕</button>
+
+      <div style="display:flex; align-items:center; gap:12px; margin-bottom:16px;">
+        <span style="font-size:2.2rem;">🤖</span>
+        <div>
+          <h3 style="font-size:1.35rem; font-weight:800; color:#f8fafc;">Bharosa Shield A1–A6 Multi-Agent Architecture</h3>
+          <p style="font-size:0.85rem; color:#94a3b8;">
+            A pipeline of six specialized autonomous agents collaborating with mathematical precision to protect vulnerable citizens.
+          </p>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:14px;">
+        
+        <div class="feature-subcard" style="border-left:4px solid #38bdf8; background:#0f172a; padding:14px; border-radius:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-weight:800; color:#38bdf8; font-size:1rem;">A1: Input Quality & Extraction</div>
+            <span style="font-size:0.7rem; background:rgba(56,189,248,0.2); color:#38bdf8; padding:2px 8px; border-radius:999px; font-weight:700;">Extraction Gate</span>
+          </div>
+          <p style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px; line-height:1.4;">
+            Checks whether submitted content is readable and extracts information reliably.
+          </p>
+          <div style="font-size:0.75rem; color:#94a3b8;">
+            <strong style="color:#e2e8f0;">RESPONSIBILITIES:</strong>
+            <ul style="margin:4px 0 8px 16px; line-height:1.4;">
+              <li>Checks image clarity, blur and lighting</li>
+              <li>Uses OCR to extract document text</li>
+              <li>Extracts text from messages and voice notes</li>
+              <li>Detects missing or incomplete information</li>
+            </ul>
+            <div style="background:#1e293b; padding:6px 10px; border-radius:6px; font-size:0.75rem; color:#38bdf8;">
+              <strong>OUTPUT:</strong> Extracted text + quality assessment
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-subcard" style="border-left:4px solid #f87171; background:#0f172a; padding:14px; border-radius:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-weight:800; color:#f87171; font-size:1rem;">A2: Threat Pattern Detection</div>
+            <span style="font-size:0.7rem; background:rgba(248,113,113,0.2); color:#f87171; padding:2px 8px; border-radius:999px; font-weight:700;">Pattern Engine</span>
+          </div>
+          <p style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px; line-height:1.4;">
+            Identifies known fraud indicators and suspicious patterns in message content.
+          </p>
+          <div style="font-size:0.75rem; color:#94a3b8;">
+            <strong style="color:#e2e8f0;">RESPONSIBILITIES:</strong>
+            <ul style="margin:4px 0 8px 16px; line-height:1.4;">
+              <li>Detects OTP, PIN and password requests</li>
+              <li>Identifies suspicious URLs (.apk, typosquats, shorteners)</li>
+              <li>Detects urgency and account-blocking threats</li>
+              <li>Flags upfront payment demands and impersonation patterns</li>
+            </ul>
+            <div style="background:#1e293b; padding:6px 10px; border-radius:6px; font-size:0.75rem; color:#f87171;">
+              <strong>OUTPUT:</strong> Threat indicators + risk findings
+            </div>
+          </div>
+        </div>
+
+        <!-- A3 Card -->
+        <div class="feature-subcard" style="border-left:4px solid #fbbf24; background:#0f172a; padding:14px; border-radius:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-weight:800; color:#fbbf24; font-size:1rem;">A3: Linguistic & Semantic Analysis</div>
+            <span style="font-size:0.7rem; background:rgba(251,191,36,0.2); color:#fbbf24; padding:2px 8px; border-radius:999px; font-weight:700;">Semantic NLP</span>
+          </div>
+          <p style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px; line-height:1.4;">
+            Understands what the message or document actually means beneath the surface.
+          </p>
+          <div style="font-size:0.75rem; color:#94a3b8;">
+            <strong style="color:#e2e8f0;">RESPONSIBILITIES:</strong>
+            <ul style="margin:4px 0 8px 16px; line-height:1.4;">
+              <li>Understands message intent and context</li>
+              <li>Identifies emotional manipulation (fear, greed, urgency, isolation)</li>
+              <li>Analyzes regional-language content (Hindi, Tamil, Telugu, Bengali)</li>
+              <li>Explains complex financial clauses in simple language</li>
+            </ul>
+            <div style="background:#1e293b; padding:6px 10px; border-radius:6px; font-size:0.75rem; color:#fbbf24;">
+              <strong>OUTPUT:</strong> Semantic interpretation + suspicious intent
+            </div>
+          </div>
+        </div>
+
+        <!-- A4 Card -->
+        <div class="feature-subcard" style="border-left:4px solid #a855f7; background:#0f172a; padding:14px; border-radius:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-weight:800; color:#a855f7; font-size:1rem;">A4: Contextual Verification</div>
+            <span style="font-size:0.7rem; background:rgba(168,85,247,0.2); color:#a855f7; padding:2px 8px; border-radius:999px; font-weight:700;">Forensic Reality</span>
+          </div>
+          <p style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px; line-height:1.4;">
+            Checks whether claims and identities are consistent with trusted institutional standards.
+          </p>
+          <div style="font-size:0.75rem; color:#94a3b8;">
+            <strong style="color:#e2e8f0;">RESPONSIBILITIES:</strong>
+            <ul style="margin:4px 0 8px 16px; line-height:1.4;">
+              <li>Examines claimed sender identity (TRAI headers vs personal mobile SIMs)</li>
+              <li>Checks claimed organization against trusted references (RBI, SERC, DoT)</li>
+              <li>Identifies inconsistent offer details</li>
+              <li>Compares information with available trusted sources</li>
+            </ul>
+            <div style="background:#1e293b; padding:6px 10px; border-radius:6px; font-size:0.75rem; color:#a855f7;">
+              <strong>OUTPUT:</strong> Verification findings + unknown information
+            </div>
+          </div>
+        </div>
+
+        <!-- A5 Card -->
+        <div class="feature-subcard" style="border-left:4px solid #10b981; background:#0f172a; padding:14px; border-radius:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-weight:800; color:#10b981; font-size:1rem;">A5: Autonomous Safety Gatekeeper</div>
+            <span style="font-size:0.7rem; background:rgba(16,185,129,0.2); color:#10b981; padding:2px 8px; border-radius:999px; font-weight:700;">Invariant Guard</span>
+          </div>
+          <p style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px; line-height:1.4;">
+            Prevents unsafe or unsupported conclusions and enforces zero-compromise safety invariants.
+          </p>
+          <div style="font-size:0.75rem; color:#94a3b8;">
+            <strong style="color:#e2e8f0;">RESPONSIBILITIES:</strong>
+            <ul style="margin:4px 0 8px 16px; line-height:1.4;">
+              <li>Checks disagreements between agents and arbitrates conflicts</li>
+              <li>Prevents unsupported safe verdicts (Zero Blind Signatures Policy)</li>
+              <li>Escalates high-risk or uncertain cases (Veto on OTP / UPI PIN demands)</li>
+              <li>Enforces privacy and safety restrictions (PII scrubbing)</li>
+            </ul>
+            <div style="background:#1e293b; padding:6px 10px; border-radius:6px; font-size:0.75rem; color:#10b981;">
+              <strong>OUTPUT:</strong> Approved, blocked or escalated assessment
+            </div>
+          </div>
+        </div>
+
+        <!-- A6 Card -->
+        <div class="feature-subcard" style="border-left:4px solid #ec4899; background:#0f172a; padding:14px; border-radius:8px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+            <div style="font-weight:800; color:#ec4899; font-size:1rem;">A6: Decision Coordinator & Action</div>
+            <span style="font-size:0.7rem; background:rgba(236,72,153,0.2); color:#ec4899; padding:2px 8px; border-radius:999px; font-weight:700;">Synthesis & Voice</span>
+          </div>
+          <p style="font-size:0.82rem; color:#cbd5e1; margin-bottom:8px; line-height:1.4;">
+            Combines all findings and communicates the final result clearly to vulnerable citizens.
+          </p>
+          <div style="font-size:0.75rem; color:#94a3b8;">
+            <strong style="color:#e2e8f0;">RESPONSIBILITIES:</strong>
+            <ul style="margin:4px 0 8px 16px; line-height:1.4;">
+              <li>Aggregates evidence from all agents (A1 to A5)</li>
+              <li>Produces SCAM, RISKY or NO KNOWN RED FLAGS verdict</li>
+              <li>Generates a simple-language explanation without legal jargon</li>
+              <li>Recommends one clear action and prepares multilingual voice output</li>
+            </ul>
+            <div style="background:#1e293b; padding:6px 10px; border-radius:6px; font-size:0.75rem; color:#ec4899;">
+              <strong>OUTPUT:</strong> Final verdict + explanation + recommended action
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top:18px; text-align:right;">
+        <button class="chip-btn" onclick="closeAgentsArchitectureModal()" style="background:#2563eb; color:white; border:none; padding:8px 20px; font-weight:700;">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+
+const BENCHMARK_MESSAGES = [
+  {
+    id: 'scam_01',
+    category: 'Electricity Bill Disconnection',
+    expected: 'SCAM',
+    sender: '+919812345678',
+    text: 'Dear Consumer Your Electricity Power will be disconnected Tonight at 9.30 PM from electricity office because your previous month bill was not update. Please immediately contact our power officer at 9812345678 or download BijliPay.apk to avoid blackout.'
+  },
+  {
+    id: 'scam_02',
+    category: 'Banking / SBI KYC APK',
+    expected: 'SCAM',
+    sender: '+919712034912',
+    text: 'SBI ALERT: Dear Customer, your SBI YONO account has been suspended due to pending PAN/Aadhaar card update. Please update your KYC immediately at http://sbi-secure-kyc-update.apk to avoid permanent debit card blocking.'
+  },
+  {
+    id: 'scam_03',
+    category: 'Work-From-Home Task Scam',
+    expected: 'SCAM',
+    sender: '+919876543210',
+    text: 'Work from home opportunity! Earn ₹3,500 to ₹8,000 daily part-time just by liking YouTube videos and rating hotels on Google Maps. No investment required for first task. Contact HR Priya on WhatsApp/Telegram: +91-9876543210. First task bonus ₹250 instant payout on UPI.'
+  },
+  {
+    id: 'scam_04',
+    category: 'Lottery / KBC Advance Fee',
+    expected: 'SCAM',
+    sender: '+919988776655',
+    text: 'Namaskar ji! Main Kaun Banega Crorepati Mumbai head office se Manager Rana Pratap Singh bol raha hoon. Aapke SIM card number ne KBC 25 Lakh ka mega lottery jeeta hai. Ye paisa lene ke liye registration fee ₹4,999 turant is UPI par jama karein.'
+  },
+  {
+    id: 'scam_05',
+    category: 'HDFC NetBanking Block Threat',
+    expected: 'SCAM',
+    sender: '+919123456789',
+    text: 'HDFC BANK NOTIFICATION: Your NetBanking access will be deactivated in 24 hours due to non-verification of document. Kindly reactivate immediately by downloading NetBanking-helper.apk at http://hdfc-kyc-auth.com/app'
+  },
+  {
+    id: 'scam_06',
+    category: 'UPI Collect Request / Fraudulent Refund',
+    expected: 'SCAM',
+    sender: '+919456123456',
+    text: 'PhonePe Cashback Notice: You have won ₹2,499 cash reward from Diwali lucky draw! Open PhonePe app, accept the collect request and enter your UPI PIN to claim money directly in your account.'
+  },
+  {
+    id: 'scam_07',
+    category: 'Digital Arrest / Customs CBI Threat',
+    expected: 'SCAM',
+    sender: '+919833445566',
+    text: 'URGENT NOTICE: A parcel sent in your name containing narcotics and 5 fake passports has been seized by Mumbai Customs & CBI. Non-bailable arrest warrant issued. Contact Narcotics Bureau Officer Rajiv Sharma immediately on Skype or call +919833445566 to settle.'
+  },
+  {
+    id: 'scam_08',
+    category: 'Predatory Instant Loan APK',
+    expected: 'SCAM',
+    sender: '+919321456780',
+    text: 'Instant Loan ₹50,000 approved without CIBIL score or salary slip! Zero interest for 30 days. Disbursal in 2 minutes. Install CashFastLoan.apk now from http://bit.ly/cashfast-apk'
+  },
+  {
+    id: 'scam_09',
+    category: 'Aadhaar / SIM Deactivation',
+    expected: 'SCAM',
+    sender: '+919654321987',
+    text: 'TRAI Alert: Your Jio/Airtel mobile number will be disconnected within 2 hours as your Aadhaar biometric re-verification is pending. Dial our verification officer on 9654321987 immediately.'
+  },
+  {
+    id: 'scam_10',
+    category: 'PM Kisan Fake Scheme Advance Fee',
+    expected: 'SCAM',
+    sender: '+919543210987',
+    text: 'PM Kisan Samman Nidhi: Aapki 16vi kist ₹2,000 rok di gayi hai. Turant e-KYC karne ke liye http://pmkisan-gov-update.xyz par click karein aur ₹125 processing fee jama karein.'
+  },
+  {
+    id: 'scam_11',
+    category: 'Cred Harvesting / OTP Phishing',
+    expected: 'SCAM',
+    sender: '+919811223344',
+    text: 'Dear customer, your credit card reward points worth ₹7,450 are expiring today! Click http://reward-points-claim.com to convert points into cash. Enter card details and share OTP to confirm.'
+  },
+  {
+    id: 'scam_12',
+    category: 'Fake Overseas Job Offer',
+    expected: 'SCAM',
+    sender: '+919822334455',
+    text: 'Dubai Airport Logistics: Urgent hiring for supervisor and helper. Salary 4500 AED (₹1,02,000). Free food and accommodation. Send your passport copy and ₹18,500 visa stamping charges to GooglePay number 9822334455.'
+  },
+  {
+    id: 'scam_13',
+    category: 'ICICI Bank PAN Expiry APK',
+    expected: 'SCAM',
+    sender: '+919733445566',
+    text: 'ICICI ALERT: Your bank account will be blocked today because your PAN number is expired. Update immediately at http://icici-pan-verify.apk to prevent debit freeze.'
+  },
+  {
+    id: 'scam_14',
+    category: 'Telegram Crypto Investment',
+    expected: 'SCAM',
+    sender: '+919944556677',
+    text: 'Earn ₹25,000 per week guaranteed return! Deposit ₹2,000 and get ₹6,000 in 2 hours via algorithmic crypto trading. Join our VIP channel: https://t.me/CryptoProfitDailyAdmin'
+  },
+  {
+    id: 'scam_15',
+    category: 'Gas Subsidy Deactivation',
+    expected: 'SCAM',
+    sender: '+919855667788',
+    text: 'Indane Gas: Your LPG cylinder subsidy of ₹350 is blocked. To release pending subsidy, update bank account and enter UPI PIN at http://indane-subsidy-release.online'
+  },
+  {
+    id: 'scam_16',
+    category: 'Income Tax Refund Phishing',
+    expected: 'SCAM',
+    sender: '+919866778899',
+    text: 'Income Tax Dept: An IT refund of ₹15,480 has been approved for your PAN. Account number incorrect. Update your bank account details and submit OTP at http://incometax-refund-gov.in.net'
+  },
+  {
+    id: 'scam_17',
+    category: 'WhatsApp Lucky Draw Audio Note',
+    expected: 'SCAM',
+    sender: '+919877889900',
+    text: 'Congratulations! Your WhatsApp number was selected in London International Lottery for ₹50,00,000. Send ₹9,999 clearing charge via PhonePe to release cheque.'
+  },
+  {
+    id: 'scam_18',
+    category: 'Ration Card Deactivation',
+    expected: 'SCAM',
+    sender: '+919888990011',
+    text: 'Khadya Vibhag Alert: Aapka Free Ration Card suspend kar diya gaya hai. Chalu rakhne ke liye turant call karein hamare ration babu ko 9888990011 par ya RationSeva.apk install karein.'
+  },
+  {
+    id: 'scam_19',
+    category: 'Electricity Night Bill cut with TinyURL',
+    expected: 'SCAM',
+    sender: '+919899001122',
+    text: 'Bijli Board Alert: Your light connection will cut tonight at 10:00 PM due to unpaid bill of ₹840. Pay now or contact 9899001122. Download bill: https://tinyurl.com/bijlipay'
+  },
+  {
+    id: 'scam_20',
+    category: 'Bank Card Cloning Phishing',
+    expected: 'SCAM',
+    sender: '+919900112233',
+    text: 'Your Axis Bank debit card is compromised! To prevent unauthorized withdrawal of ₹45,000, call security officer immediately on 9900112233 and confirm your OTP.'
+  },
+  {
+    id: 'scam_21',
+    category: 'Fake Police Challan APK',
+    expected: 'SCAM',
+    sender: '+919911223344',
+    text: 'Traffic Police E-Challan: Vehicle DL01AB1234 has pending overspeeding fine of ₹2,000. Arrest warrant issued if unpaid. Download VahanChallan.apk to pay: http://delhipolice-challan.apk'
+  },
+  {
+    id: 'scam_22',
+    category: 'Postal Courier Customs Scam',
+    expected: 'SCAM',
+    sender: '+919922334455',
+    text: 'India Post: Your parcel #IN89218 is detained at sorting facility due to missing address details. Pay ₹48 redirection fee at http://indiapost-redelivery.top within 12 hours.'
+  },
+  {
+    id: 'scam_23',
+    category: 'WhatsApp Gold / Fake App Trojan',
+    expected: 'SCAM',
+    sender: '+919933445566',
+    text: 'Exclusive WhatsApp Gold version leaked with video call recording and deleted message viewer. Download official package: http://whatsapp-gold-update.apk'
+  },
+  {
+    id: 'scam_24',
+    category: 'Fake Toll Plaza FASTag Blocking',
+    expected: 'SCAM',
+    sender: '+919944556688',
+    text: 'NHAI FASTag: Your FASTag account has been blacklisted due to incomplete KYC. Update immediately at http://fastag-kyc-update.com or pay ₹1,000 penalty at toll.'
+  },
+  {
+    id: 'scam_25',
+    category: 'Railway Ticket Refund APK',
+    expected: 'SCAM',
+    sender: '+919955667799',
+    text: 'IRCTC Refund: Your cancelled PNR 2459810234 refund of ₹1,850 failed. Download IRCTCFastRefund.apk to claim your instant bank refund.'
+  },
+  {
+    id: 'scam_26',
+    category: 'Work From Home Amazon Review Scam',
+    expected: 'SCAM',
+    sender: '+919966778800',
+    text: 'Amazon India part time hiring: Review products and earn ₹500 per review. Daily payout ₹4,000 guaranteed. Join WhatsApp: +919966778800. No qualification needed.'
+  },
+  {
+    id: 'scam_27',
+    category: 'Jeevan Pramaan Fake Pension APK',
+    expected: 'SCAM',
+    sender: '+919977889911',
+    text: 'Sparsh Defence Pension: Your monthly pension will stop from next month due to missing Life Certificate. Download SparshLifeCert.apk from http://sparsh-pension.org.in.apk'
+  },
+  {
+    id: 'scam_28',
+    category: 'Hotel Review Google Maps Scam',
+    expected: 'SCAM',
+    sender: '+919988990022',
+    text: 'Hello! I am Swati from Google Maps Partners. Rate 3 hotels 5 stars and get ₹150 per rating instantly on UPI. Message on Telegram @GoogleRatingHR to begin.'
+  },
+  {
+    id: 'scam_29',
+    category: 'Bank Fraud OTP Demand Caller Followup',
+    expected: 'SCAM',
+    sender: '+919999001133',
+    text: 'SBI Support: As discussed on call regarding unauthorized transaction, please share the 6 digit verification code you received to cancel the charge of ₹24,000.'
+  },
+  {
+    id: 'scam_30',
+    category: 'Fake Scholarship Scheme',
+    expected: 'SCAM',
+    sender: '+919810112233',
+    text: 'National Scholarship Portal: Student awarded ₹50,000 PM Vidyalaxmi scholarship. Pay ₹1,200 verification stamp fee at http://vidyalaxmi-scholarship.xyz within 24 hours.'
+  },
+  {
+    id: 'scam_31',
+    category: 'Traffic Police Fake e-Challan APK',
+    expected: 'SCAM',
+    sender: '+919812998811',
+    text: 'E-Challan Alert: Notice No. DL-2026-CH9812 has been issued against your vehicle DL01AB1234 for overspeeding (Fine: Rs 2,000). Pay online within 24 hours at http://parivahan-echallan.apk to avoid court summons.'
+  },
+  {
+    id: 'scam_32',
+    category: 'Fake EPFO Emergency PF Withdrawal APK',
+    expected: 'SCAM',
+    sender: '+919877112233',
+    text: 'EPFO Alert: Your claim for emergency PF advance withdrawal of Rs 75,000 is approved. Download EPFO-Helper.apk from http://epfindia-claim.xyz and enter your UAN and Aadhaar OTP to disburse funds.'
+  },
+  {
+    id: 'scam_33',
+    category: 'Regional Tamil TANGEDCO Electricity Cutoff',
+    expected: 'SCAM',
+    sender: '+919840123456',
+    text: 'TANGEDCO Notice: Dear Consumer, your electricity power will be disconnected today at 9:30 PM due to unpaid EB bill. Contact electricity manager at 9840123456 or download EB-Pay.apk to avoid power cut.'
+  },
+  {
+    id: 'scam_34',
+    category: 'Regional Telugu Instant Loan App Extortion',
+    expected: 'SCAM',
+    sender: '+919849012345',
+    text: 'Instant Cash Loan approved! Rs 30,000 transferred in 5 minutes without salary slip. Zero CIBIL check. Install FastRupeeLoan.apk immediately from http://bit.ly/fast-rupee-loan'
+  },
+  {
+    id: 'scam_35',
+    category: 'Regional Bengali Festival Lottery Advance Fee',
+    expected: 'SCAM',
+    sender: '+919830123456',
+    text: 'Congratulations! You have won Rs 15,00,000 in West Bengal State Festival Lucky Draw. To release the prize cheque to your bank account, deposit Rs 3,500 government tax to UPI id 9830123456@upi.'
+  },
+  {
+    id: 'scam_36',
+    category: 'India Post Fake Address Redelivery Phishing',
+    expected: 'SCAM',
+    sender: '+919821098765',
+    text: 'India Post: Your package #IN984210984 could not be delivered due to incomplete street address. Update your address within 12 hours at http://indiapost-parcel-redelivery.top to prevent package return.'
+  },
+  {
+    id: 'scam_37',
+    category: 'Credit Card Limit Upgrade Phishing APK',
+    expected: 'SCAM',
+    sender: '+919811882233',
+    text: 'Card Upgrade Offer: Your pre-approved credit limit is increased to Rs 5,00,000 with lifetime free annual fee. Download CardManager.apk at http://sbi-card-upgrade.live to activate your new limit.'
+  },
+  {
+    id: 'scam_38',
+    category: 'LPG Gas Subsidy Aadhaar Freeze Coercion',
+    expected: 'SCAM',
+    sender: '+919711223344',
+    text: 'Bharat Gas Alert: Your LPG cooking gas subsidy of Rs 300/cylinder has been suspended due to pending Aadhaar biometric seeding. Update immediately at http://ebharatgas-kyc.xyz or call 9711223344.'
+  },
+  {
+    id: 'scam_39',
+    category: 'Digital Arrest Narcotics Video Call Coercion',
+    expected: 'SCAM',
+    sender: '+919877665544',
+    text: 'CRITICAL NOTICE: Narcotics Control Bureau & Delhi Police have intercepted an illegal drug package dispatched with your Aadhaar number. A digital arrest warrant is active. Connect on Skype NCB_Legal_Desk or call 9877665544.'
+  },
+  {
+    id: 'scam_40',
+    category: '5G SIM Upgrade / eSIM Swap Threat',
+    expected: 'SCAM',
+    sender: '+919899001122',
+    text: 'Airtel/Jio Advisory: 4G SIM service will stop tonight. Upgrade to 5G SIM instantly without visiting store. Send SMS "SIM 89910294819" to 121 or click http://sim-5g-upgrade.apk to prevent number deactivation.'
+  },
+
+  {
+    id: 'legit_01',
+    category: 'Authentic Bank OTP with Safety Warning',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VM-SBIINB',
+    text: 'Your OTP for purchase of Rs 1,499.00 at FLIPKART using SBI Card ending in 4108 is 748920. Valid for 10 minutes. Do not share OTP or Card details with anyone including bank staff.'
+  },
+  {
+    id: 'legit_02',
+    category: 'HDFC Bank Account Credit Alert',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-HDFCBK',
+    text: 'Dear Customer, INR 32,500.00 has been credited to your account ending in 9821 on 01-Nov-26 by NEFT through employer payroll. Available balance INR 45,210.50. - HDFC Bank'
+  },
+  {
+    id: 'legit_03',
+    category: 'ICICI Bank ATM Cash Withdrawal',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VK-ICICIB',
+    text: 'Your ICICI Bank Account ending in 3042 has been debited with INR 5,000.00 on 12-Nov-26 at ATM. If you did not make this transaction, SMS BLOCK to 5676766 or call 18002008.'
+  },
+  {
+    id: 'legit_04',
+    category: 'Official BESCOM Electricity Bill Reminder',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'JM-BESCOM',
+    text: 'Dear Consumer, bill for CA No. 109283746 for October 2026 is Rs. 1,240.00. Due date is 20-Nov-2026. Pay online at https://bescom.karnataka.gov.in or through Bescom Mithra app.'
+  },
+  {
+    id: 'legit_05',
+    category: 'IRCTC Train Ticket Booking Confirmation',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'BZ-IRCTC',
+    text: 'PNR 2451098234, Train 12951 NDLS TEJAS RAJ, Date 18-Nov-2026, 3A, Coach B4 Berth 23 (MB). Fare: Rs 2850. Have a safe journey. Verify on irctc.co.in.'
+  },
+  {
+    id: 'legit_06',
+    category: 'Tata Power Bill Generation',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-TATAPW',
+    text: 'Tata Power Consumer 90024810: Bill generated for Rs 890.00. Due date 25-Nov-2026. Pay via official website tatapower.com or download Tata Power mobile app on Google Play.'
+  },
+  {
+    id: 'legit_07',
+    category: 'Aadhaar Authentication Alert',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VK-UIDAIA',
+    text: 'Aadhaar (XXXX XXXX 8912) was used for Biometric authentication on 10/11/2026 14:22:10 IST. If not done by you, visit https://myaadhaar.uidai.gov.in or call 1947.'
+  },
+  {
+    id: 'legit_08',
+    category: 'Amazon Pay UPI Mandate Notification',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-AMZNPY',
+    text: 'Autopay of Rs 299.00 for Amazon Prime on your SBI Account ending 4108 is scheduled for 15-Nov-2026. To revoke or modify, visit your bank UPI app.'
+  },
+  {
+    id: 'legit_09',
+    category: 'EPFO Monthly Contribution Credit',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'JM-EPFOHO',
+    text: 'Dear Member, monthly PF contribution of Rs 3,600.00 has been deposited in your EPF Account for month Oct-2026. Check passbook on epfindia.gov.in or UMANG app.'
+  },
+  {
+    id: 'legit_10',
+    category: 'Axis Bank Credit Card Statement Alert',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VM-AXISBK',
+    text: 'Axis Bank Card ending 1204: Statement for Oct 2026 is generated. Total Due: Rs 8,420.00. Min Due: Rs 500.00. Payment Due Date: 28-Nov-2026. View on axisbank.com'
+  },
+  {
+    id: 'legit_11',
+    category: 'Airtel Broadband Bill Receipt',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'BZ-AIRTEL',
+    text: 'Thank you for your payment of Rs 942.82 for Airtel Fiber Account 01149201948. Transaction ID: TXN9810294. Invoice sent to registered email. airtel.in'
+  },
+  {
+    id: 'legit_12',
+    category: 'SBI Branch KYC Routine Notice',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VK-SBIINB',
+    text: 'Dear Customer, your account is due for periodic KYC update. Please visit your home branch with valid ID and Address proof at your convenience. State Bank of India'
+  },
+  {
+    id: 'legit_13',
+    category: 'Flipkart Delivery Partner Out for Delivery',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-EKARTL',
+    text: 'Your Flipkart order containing Samsung Galaxy M14 is out for delivery today with our agent Santosh. Share delivery code 4910 only when product is delivered in hand.'
+  },
+  {
+    id: 'legit_14',
+    category: 'Income Tax Official Assessment Notice',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'JM-INCOME',
+    text: 'Income Tax Dept: Intimation u/s 143(1) for AY 2026-27 has been sent to your registered email. Check your dashboard on incometax.gov.in. Do not reply to this SMS.'
+  },
+  {
+    id: 'legit_15',
+    category: 'Jio Mobile Recharge Successful',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-JIOMOB',
+    text: 'Recharge of Rs 239.00 is successful for your Jio Number 9876543210. Plan: 1.5GB/day + Unlimited Calls for 28 days. Check balance on MyJio App or jio.com.'
+  },
+  {
+    id: 'legit_16',
+    category: 'CoWIN / ABHA Digital Health Card',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VK-NHAIND',
+    text: 'Your Ayushman Bharat Health Account (ABHA) number 14-9810-2948-1029 is active. Download card from abdm.gov.in. National Health Authority.'
+  },
+  {
+    id: 'legit_17',
+    category: 'Zomato Food Order Delivered',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'BZ-ZOMATO',
+    text: 'Your order from Bikanervala has been delivered. Total bill Rs 412.00 paid via UPI. Rate your delivery partner on Zomato app.'
+  },
+  {
+    id: 'legit_18',
+    category: 'Standard Chartered Loan EMI Deducted',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-SCBLTN',
+    text: 'Dear Customer, loan EMI of INR 12,450.00 for Auto Loan Account ending 8910 was successfully cleared via NACH mandate on 05-Nov-26. - Standard Chartered Bank'
+  },
+  {
+    id: 'legit_19',
+    category: 'Indian Oil Indane Cylinder Booked',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VK-IOCLTD',
+    text: 'Refill booking #891024 confirmed for Consumer 109820. Delivery by Rama Gas Agency within 2 working days. Subsidy applicable as per Govt norms. cx.indianoil.in'
+  },
+  {
+    id: 'legit_20',
+    category: 'Google Account Password Change Alert',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-GOOGLE',
+    text: 'Password changed for your Google Account ramlal@gmail.com on Chrome on Windows. If this wasn\'t you, secure your account at https://myaccount.google.com/security'
+  },
+  {
+    id: 'legit_21',
+    category: 'Adani Electricity Bill Payment Successful',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VK-ADANIE',
+    text: 'Thank you for your payment of Rs 1,450.00 for Adani Electricity Account 109284710. Receipt no: REC9810294. Save trees, switch to e-bill on adanielectricity.com.'
+  },
+  {
+    id: 'legit_22',
+    category: 'PNB Central Pension Credit SMS',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VM-PNBSMS',
+    text: 'Dear Customer, your Pension of Rs 24,800.00 has been credited to your PNB Account ending in 8192 on 31-Oct-2026. Available balance Rs 31,450.00. - Punjab National Bank'
+  },
+  {
+    id: 'legit_23',
+    category: 'LIC Policy Renewal Premium Confirmation',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VK-LICIND',
+    text: 'Dear Policyholder, premium payment of Rs 5,640.00 for LIC Policy #891029481 received on 04-Nov-2026. Download e-receipt from customer portal licindia.in. Life Insurance Corporation.'
+  },
+  {
+    id: 'legit_24',
+    category: 'IRCTC Tatkal Confirmed Ticket Booking & PNR',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'BZ-IRCTC',
+    text: 'PNR: 4529108420, Train: 12004 LKO SHTBDI, DOJ: 20-Nov-26, CC, Coach C2 Berth 45 (Window). Total Fare: Rs 1,165.00. Detailed chart on irctc.co.in or 139.'
+  },
+  {
+    id: 'legit_25',
+    category: 'Axis Bank Credit Card Monthly E-Statement Notice',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VM-AXISBK',
+    text: 'Your Axis Bank Credit Card statement ending 4501 is sent to your registered email. Total Amount Due: Rs 4,120.00. Payment Due Date: 22-Nov-2026. Pay easily via Axis Mobile app.'
+  },
+  {
+    id: 'legit_26',
+    category: 'Swiggy Order Delivery Partner Arriving OTP',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'BZ-SWIGGY',
+    text: 'Your Swiggy order from Haldiram is arriving soon with delivery partner Rahul. Share delivery OTP 3914 only after taking package delivery. Track on Swiggy app.'
+  },
+  {
+    id: 'legit_27',
+    category: 'Flipkart Delivery Secret PIN',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-EKARTL',
+    text: 'Wishmaster is out for delivery with your Flipkart order. Please verify the parcel packaging and share delivery secret PIN 8201 only when you collect the parcel.'
+  },
+  {
+    id: 'legit_28',
+    category: 'Jio 5G Prepaid Plan Expiry Reminder',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-JIOMOB',
+    text: 'Dear Jio Customer, your current 1.5GB/day plan for 9876543210 will expire in 2 days on 16-Nov-2026. To enjoy uninterrupted services, recharge via MyJio App or dial 1991.'
+  },
+  {
+    id: 'legit_29',
+    category: 'UIDAI Official Aadhaar Authentication Notification',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VK-UIDAIA',
+    text: 'Aadhaar ending XXXX 4190 was used for Demographic Authentication via Income Tax Dept on 08-Nov-2026. If not done by you, lock your biometric on myaadhaar.uidai.gov.in or call 1947.'
+  },
+  {
+    id: 'legit_30',
+    category: 'TRAI DND Registration Confirmation SMS',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-TRAIIN',
+    text: 'Your request for registration on National Do Not Disturb (DND) Registry has been processed successfully. Service will be activated within 24 hours. Telecom Regulatory Authority of India.'
+  },
+  {
+    id: 'risky_01',
+    category: 'Unverified Commercial Loan Offer',
+    expected: 'RISKY',
+    sender: '+919876001234',
+    text: 'Pre-approved personal loan up to ₹5,00,000 at low interest. Quick verification. Check eligibility at http://fastloanapproval.in/apply'
+  },
+  {
+    id: 'risky_02',
+    category: 'Real Estate Promotional SMS',
+    expected: 'RISKY',
+    sender: '+919820011223',
+    text: 'Luxury 2 BHK near Metro station starting ₹38 Lakhs. Guaranteed rental return of ₹18,000/month. Only 5 units left. Call 9820011223 to book site visit.'
+  },
+  {
+    id: 'risky_03',
+    category: 'Credit Card Limit Increase Lure',
+    expected: 'RISKY',
+    sender: '+919930044556',
+    text: 'Congratulations! You are eligible for free credit limit increase from ₹1,00,000 to ₹3,50,000. Click http://card-upgrade-online.in to activate now.'
+  },
+  {
+    id: 'risky_04',
+    category: 'Unsolicited Herbal Medicine MLM',
+    expected: 'RISKY',
+    sender: '+919740055667',
+    text: 'Cure diabetes naturally in 30 days. 100% Ayurvedic certified formula. Order today and get 50% discount. WhatsApp on 9740055667 for delivery.'
+  },
+  {
+    id: 'risky_05',
+    category: 'Unknown Shortened Courier Tracking Link',
+    expected: 'RISKY',
+    sender: '+919650066778',
+    text: 'Your package could not be delivered today. Please update delivery address by visiting https://bit.ly/track-pkg-982 within 24 hours.'
+  },
+  {
+    id: 'risky_06',
+    category: 'Demat Stock Tip Recommendation',
+    expected: 'SCAM',
+    sender: '+919560077889',
+    text: 'Jackpot Penny Stock: Buy ABC Pharma at ₹14, Target ₹65 in 3 weeks. 100% accurate SEBI research report. Join free Telegram: t.me/PennyStockTipsToday'
+  },
+  {
+    id: 'risky_07',
+    category: 'Ambiguous Bank KYC Advisory without link',
+    expected: 'SCAM',
+    sender: '+919811099887',
+    text: 'Important Bank Advisory: Central Bank mandates all customers to re-verify mobile number and address. Please contact nearest branch or call officer on 9811099887.'
+  },
+  {
+    id: 'risky_08',
+    category: 'Unsolicited Job Placement Agency',
+    expected: 'RISKY',
+    sender: '+919877088776',
+    text: 'Urgent openings in MNC IT companies for Freshers and Experienced. Package 4.5 LPA to 12 LPA. Send resume to jobs@placement-india-network.com'
+  },
+  {
+    id: 'risky_09',
+    category: 'Insurance Policy Bonus Claim',
+    expected: 'SCAM',
+    sender: '+919866077665',
+    text: 'Your lapsed LIC policy has an unclaimed bonus of ₹84,500. Call IRDAI grievance cell officer Sharma on 9866077665 before month end to claim funds.'
+  },
+  {
+    id: 'risky_10',
+    category: 'Ambiguous Vehicle FASTag Low Balance Notice',
+    expected: 'RISKY',
+    sender: '+919855066554',
+    text: 'FASTag alert: Your account balance is low (Rs 45.00). Recharge immediately to avoid double toll cash penalty. Recharge at fastag-recharge-direct.net'
+  },
+  {
+    id: 'edge_01',
+    category: 'Legitimate Bank Alert containing "KYC"',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VM-SBIINB',
+    text: 'SBI: As per RBI guidelines, please submit your Re-KYC documents at your home branch. Disregard if already submitted. We never ask for passwords/OTP.'
+  },
+  {
+    id: 'edge_02',
+    category: 'Legitimate Bank Alert containing "Block" keyword',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'AD-HDFCBK',
+    text: 'Your card 8910 was used for Rs 450 at CAFE. If you did not make this purchase, SMS BLOCK 8910 to 5676712 to protect your card.'
+  },
+  {
+    id: 'edge_03',
+    category: 'Legitimate Shopping Discount containing "Winner/Contest"',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'BZ-MYNTRA',
+    text: 'Myntra End of Reason Sale! Top shoppers win extra coupon discounts up to Rs 500 off. Shop your wishlist now on the official Myntra app.'
+  },
+  {
+    id: 'edge_04',
+    category: 'Legitimate Bank Alert containing "Contact" keyword',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'VK-KOTAKB',
+    text: 'Your Kotak 811 account balance is Rs 3,420. For queries, contact customer support on official toll-free 18602662666 or visit kotak.com.'
+  },
+  {
+    id: 'edge_05',
+    category: 'Legitimate Telegram Official Security Code',
+    expected: 'NO_KNOWN_RED_FLAGS',
+    sender: 'Telegram',
+    text: 'Telegram code: 84920. Do not give this code to anyone, even if they claim to be from Telegram. This code can be used to log in to your account.'
+  }
+];
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = { BENCHMARK_MESSAGES };
+}
+
