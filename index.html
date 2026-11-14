@@ -691,3 +691,220 @@ body {
   font-size: 0.9rem;
   border: 1px solid rgba(0, 0, 0, 0.05);
 }
+    .flag-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Action Buttons Footer */
+.verdict-actions-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+@media (max-width: 600px) {
+  .verdict-actions-footer {
+    grid-template-columns: 1fr;
+  }
+}
+
+.trusted-person-btn {
+  background: #059669;
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(5, 150, 105, 0.25);
+}
+
+.trusted-person-btn:hover {
+  background: #047857;
+}
+
+.report-portal-btn {
+  background: #dc2626;
+  color: #ffffff;
+  border: none;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.92rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+  box-shadow: 0 4px 10px rgba(220, 38, 38, 0.25);
+}
+
+.report-portal-btn:hover {
+  background: #b91c1c;
+}
+
+/* CHECK A PAPER SPECIFIC STYLES */
+.paper-disclaimer-banner {
+  background: #fff7ed;
+  border-left: 5px solid #ea580c;
+  padding: 12px 16px;
+  border-radius: var(--radius-sm);
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #9a3412;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.paper-viewer-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 20px;
+}
+
+@media (max-width: 860px) {
+  .paper-viewer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.paper-preview-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.stamp-paper-mock {
+  background: #fffdf5;
+  border: 1px solid #dcd3b2;
+  padding: 20px;
+  min-height: 380px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: #292524;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.03);
+}
+
+.stamp-header {
+  border-bottom: 2px double #b45309;
+  text-align: center;
+  padding-bottom: 8px;
+  margin-bottom: 12px;
+  font-weight: 700;
+  color: #b45309;
+  text-transform: uppercase;
+}
+
+.trap-highlight {
+  background: #fee2e2;
+  border-bottom: 2px dashed #dc2626;
+  font-weight: 700;
+  color: #991b1b;
+  padding: 0 4px;
+  display: inline;
+}
+
+.stamp-watermark {
+  position: absolute;
+  top: 40%;
+  left: 10%;
+  right: 10%;
+  transform: rotate(-25deg);
+  font-size: 2rem;
+  font-weight: 900;
+  color: rgba(220, 38, 38, 0.12);
+  text-align: center;
+  pointer-events: none;
+  border: 4px dashed rgba(220, 38, 38, 0.2);
+  padding: 10px;
+}
+
+/* Framing: Things to Ask Before You Sign */
+.questions-card {
+  background: #f0fdf4;
+  border: 2px solid #86efac;
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.questions-header {
+  color: #166534;
+  font-size: 1.05rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.question-box {
+  background: #ffffff;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid #16a34a;
+  box-shadow: var(--shadow-sm);
+}
+
+.question-target {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #dc2626;
+  margin-bottom: 2px;
+}
+
+.question-phrase {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #14532d;
+}
+
+.question-subtext {
+  font-size: 0.8rem;
+  color: #475569;
+  margin-top: 4px;
+}
+
+/* TRUSTED CIRCLE & MODAL */
+.trusted-contacts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.contact-card {
+  background: #ffffff;
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
